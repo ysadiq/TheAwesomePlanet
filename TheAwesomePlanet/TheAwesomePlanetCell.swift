@@ -18,6 +18,8 @@ class TheAwesomePlanetCell: UITableViewCell {
         performUIUpdatesOnMain { [weak self] in
             self?.title.text = "\(cityCellViewModel.name), \(cityCellViewModel.country)"
             self?.subTitle.text = "\(cityCellViewModel.coordinate.lat), \(cityCellViewModel.coordinate.lon)"
+            self?.showDetail.setTitle("Discover \(cityCellViewModel.name)",for: .normal)
+            self?.showDetail.layer.cornerRadius = 4
         }
     }
 }

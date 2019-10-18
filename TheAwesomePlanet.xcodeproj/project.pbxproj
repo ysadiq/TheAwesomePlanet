@@ -25,6 +25,7 @@
 		99B184E5235A5FDD0005E952 /* CityCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */; };
 		99B184E7235A60B20005E952 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E6235A60B20005E952 /* Coordinate.swift */; };
 		99B184E9235A63EC0005E952 /* TheAwesomePlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */; };
+		99B184EB235A725F0005E952 /* cities(short).json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184EA235A725F0005E952 /* cities(short).json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellViewModel.swift; sourceTree = "<group>"; };
 		99B184E6235A60B20005E952 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetCell.swift; sourceTree = "<group>"; };
+		99B184EA235A725F0005E952 /* cities(short).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cities(short).json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				99B184A6235A080E0005E952 /* Main.storyboard */,
 				99B184A9235A08100005E952 /* Assets.xcassets */,
 				99B184AB235A08100005E952 /* LaunchScreen.storyboard */,
+				99B184EA235A725F0005E952 /* cities(short).json */,
 				99B184E0235A1C4E0005E952 /* cities.json */,
 			);
 			path = Resources;
@@ -296,6 +299,7 @@
 			files = (
 				99B184E1235A1C4E0005E952 /* cities.json in Resources */,
 				99B184AD235A08100005E952 /* LaunchScreen.storyboard in Resources */,
+				99B184EB235A725F0005E952 /* cities(short).json in Resources */,
 				99B184AA235A08100005E952 /* Assets.xcassets in Resources */,
 				99B184A8235A080E0005E952 /* Main.storyboard in Resources */,
 			);

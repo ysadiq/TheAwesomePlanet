@@ -13,5 +13,6 @@ extension DataProvider {
     struct Constants {
         // MARK: API Key
         static let citiesAPIURL = Bundle.main.url(forResource: "cities", withExtension: "json")
+        static let citiesShortListAPIURL = Bundle.main.url(forResource: "cities(short)", withExtension: "json")
     }
 }

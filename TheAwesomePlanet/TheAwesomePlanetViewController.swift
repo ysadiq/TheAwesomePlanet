@@ -11,6 +11,8 @@ import UIKit
 class TheAwesomePlanetViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     lazy var viewModel: TheAwesomePlanetViewModel = {
         return TheAwesomePlanetViewModel()
     }()
@@ -31,12 +33,18 @@ class TheAwesomePlanetViewController: UIViewController {
         }
 
         viewModel.updateLoadingStatus = { [weak self] () in
-            performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
-                    //self?.showSpinner()
-                } else {
-                    //self?.hideSpinner()
+                    self?.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.tableView.alpha = 0.0
+                    })
+                }else {
+                    self?.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.tableView.alpha = 1.0
+                    })
                 }
             }
         }
