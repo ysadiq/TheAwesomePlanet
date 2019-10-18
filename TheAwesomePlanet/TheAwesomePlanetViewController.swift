@@ -55,9 +55,6 @@ class TheAwesomePlanetViewController: UIViewController {
         viewModel.reloadTableViewClosure = { [weak self] () in
             performUIUpdatesOnMain {
                 self?.tableView.reloadData()
-//                let offset = self?.tableView.contentOffset
-//                self?.tableView.layoutIfNeeded()  // Force layout so things are updated before resetting the contentOffset.
-//                self?.tableView.setContentOffset(offset!, animated: false)
             }
         }
         viewModel.fetchCities()
@@ -83,3 +80,8 @@ extension TheAwesomePlanetViewController: UITableViewDataSource {
     }
 }
 
+extension TheAwesomePlanetViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
+        viewModel.filterCities(searchText)
+    }
+}

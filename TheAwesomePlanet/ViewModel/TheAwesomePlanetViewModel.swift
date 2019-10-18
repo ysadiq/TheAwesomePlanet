@@ -16,6 +16,12 @@ class TheAwesomePlanetViewModel {
         }
     }
 
+    private var filteredCellViewModels: [CityCellViewModel] = [CityCellViewModel]() {
+        didSet {
+            self.reloadTableViewClosure?()
+        }
+    }
+
     // callback for interfaces
     var isLoading: Bool = false {
         didSet {
@@ -30,7 +36,7 @@ class TheAwesomePlanetViewModel {
     }
 
     var numberOfCells: Int {
-        return cellViewModels.count
+        return isFiltering() ? filteredCellViewModels.count : cellViewModels.count
     }
 
     // interfaces
@@ -59,16 +65,30 @@ class TheAwesomePlanetViewModel {
         }
     }
 
+    func filterCities(_ searchText: String) {
+        if searchText != "" {
+            filteredCellViewModels = cellViewModels.filter {
+                return $0.name.lowercased().contains(searchText.lowercased())
+            }
+        } else {
+            filteredCellViewModels = cellViewModels
+        }
+    }
+
     private func sortCities(_ cities: [City]) -> [City] {
         return cities.sorted(by: { $0.name! < $1.name! })
     }
+
     func getCityCellViewModel(at indexPath: IndexPath) -> CityCellViewModel? {
         guard indexPath.row < numberOfCells else {
             return nil
         }
-        return cellViewModels[indexPath.row]
+        return isFiltering() ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
     }
 
+    private func isFiltering() -> Bool {
+        return filteredCellViewModels.count > 0 && filteredCellViewModels.count != cellViewModels.count
+    }
     private func processFetchedCities(_ cities: [City]) {
         var vms = [CityCellViewModel]()
         for city in cities {
