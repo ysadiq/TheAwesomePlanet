@@ -68,7 +68,7 @@ class TheAwesomePlanetViewModel {
     func filterCities(_ searchText: String) {
         if searchText != "" {
             filteredCellViewModels = cellViewModels.filter {
-                return $0.name.lowercased().contains(searchText.lowercased())
+                return $0.name.lowercased().starts(with: searchText.lowercased())
             }
         } else {
             filteredCellViewModels = cellViewModels
