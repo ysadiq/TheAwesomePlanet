@@ -11,6 +11,7 @@ import UIKit
 class TheAwesomePlanetViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     lazy var viewModel: TheAwesomePlanetViewModel = {
@@ -39,11 +40,13 @@ class TheAwesomePlanetViewController: UIViewController {
                     self?.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 0.0
+                        self?.searchBar.alpha = 0.0
                     })
                 }else {
                     self?.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 1.0
+                        self?.searchBar.alpha = 1.0
                     })
                 }
             }
