@@ -11,7 +11,7 @@ extension DataProvider {
     // MARK: Cities (GET) Methods
     func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void) {
 
-        guard let citiesAPI = Constants.citiesShortListAPIURL else {
+        guard let citiesAPI = Constants.citiesAPIURL else {
             return
         }
         

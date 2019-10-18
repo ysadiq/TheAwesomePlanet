@@ -50,11 +50,18 @@ class TheAwesomePlanetViewModel {
                     self?.alertMessage = error?.localizedDescription
                     return
             }
-            self?.isLoading = false
-            self?.processFetchedCities(cities)
+
+            guard let self = self else {
+                return
+            }
+            self.processFetchedCities(self.sortCities(cities))
+            self.isLoading = false
         }
     }
 
+    private func sortCities(_ cities: [City]) -> [City] {
+        return cities.sorted(by: { $0.name! < $1.name! })
+    }
     func getCityCellViewModel(at indexPath: IndexPath) -> CityCellViewModel? {
         guard indexPath.row < numberOfCells else {
             return nil
