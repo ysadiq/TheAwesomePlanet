@@ -17,6 +17,7 @@ class TheAwesomePlanetCell: UITableViewCell {
     func configure(with cityCellViewModel: CityCellViewModel) {
         performUIUpdatesOnMain { [weak self] in
             self?.title.text = "\(cityCellViewModel.name), \(cityCellViewModel.country)"
+            self?.subTitle.text = "\(cityCellViewModel.coordinate.lat), \(cityCellViewModel.coordinate.lon)"
         }
     }
 }
