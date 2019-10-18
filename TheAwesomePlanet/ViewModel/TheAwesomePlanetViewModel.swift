@@ -45,7 +45,7 @@ class TheAwesomePlanetViewModel {
     func fetchCities() {
         self.isLoading = true
         dataManager.getCities {[weak self] (cities, error) in
-            guard error != nil,
+            guard error == nil,
                 let cities = cities else {
                     self?.alertMessage = error?.localizedDescription
                     return

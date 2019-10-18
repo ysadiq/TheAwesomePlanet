@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="3KV-TB-7kh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TheAwesomePlanetCell" rowHeight="100" id="3KV-TB-7kh" customClass="TheAwesomePlanetCell" customModule="TheAwesomePlanet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3KV-TB-7kh" id="4Wv-t9-F1u">
@@ -30,21 +30,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH2-eR-qki">
-                                                    <rect key="frame" x="25" y="16" width="364" height="68"/>
+                                                    <rect key="frame" x="20" y="31" width="71" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="PH2-eR-qki" firstAttribute="top" secondItem="4Wv-t9-F1u" secondAttribute="topMargin" constant="5" id="BTI-4j-Pth"/>
-                                                <constraint firstItem="PH2-eR-qki" firstAttribute="leading" secondItem="4Wv-t9-F1u" secondAttribute="leadingMargin" constant="5" id="ff6-bJ-j9R"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="PH2-eR-qki" secondAttribute="bottom" constant="5" id="sZ8-IE-qiz"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PH2-eR-qki" secondAttribute="trailing" constant="5" id="zbx-mQ-Is2"/>
+                                                <constraint firstItem="PH2-eR-qki" firstAttribute="top" secondItem="4Wv-t9-F1u" secondAttribute="topMargin" constant="20" id="BTI-4j-Pth"/>
+                                                <constraint firstItem="PH2-eR-qki" firstAttribute="leading" secondItem="4Wv-t9-F1u" secondAttribute="leadingMargin" id="ff6-bJ-j9R"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PH2-eR-qki" secondAttribute="bottom" constant="20" id="sZ8-IE-qiz"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="PH2-eR-qki" secondAttribute="trailing" id="zbx-mQ-Is2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="PH2-eR-qki" id="jNe-6e-jL1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YPm-mV-O7n"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,6 +62,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="daW-Au-hpm" id="HLb-2n-Q2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

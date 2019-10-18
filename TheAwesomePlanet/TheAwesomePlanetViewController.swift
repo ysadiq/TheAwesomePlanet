@@ -42,13 +42,11 @@ class TheAwesomePlanetViewController: UIViewController {
         }
 
         viewModel.reloadTableViewClosure = { [weak self] () in
-
-            let offset = self?.tableView.contentOffset
-
             performUIUpdatesOnMain {
                 self?.tableView.reloadData()
-                self?.tableView.layoutIfNeeded()  // Force layout so things are updated before resetting the contentOffset.
-                self?.tableView.setContentOffset(offset!, animated: false)
+//                let offset = self?.tableView.contentOffset
+//                self?.tableView.layoutIfNeeded()  // Force layout so things are updated before resetting the contentOffset.
+//                self?.tableView.setContentOffset(offset!, animated: false)
             }
         }
         viewModel.fetchCities()
@@ -57,11 +55,20 @@ class TheAwesomePlanetViewController: UIViewController {
 
 extension TheAwesomePlanetViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfCells
+        return viewModel.numberOfCells
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TheAwesomePlanetCell",
+                                                 for: indexPath)
+        guard let cellItem = cell as? TheAwesomePlanetCell,
+            let cellViewModel = viewModel.getCityCellViewModel(at: indexPath) else {
+            return cell
+        }
+
+        cellItem.configure(with: cellViewModel)
+
+        return cell
     }
 }
 

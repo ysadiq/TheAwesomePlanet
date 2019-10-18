@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheAwesomePlanet/Network/DataProvider.swift"
-            timestampString = "593122923.499458"
+            timestampString = "593127612.514248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheAwesomePlanet/Network/DataProvider.swift"
-            timestampString = "593122923.5000449"
+            timestampString = "593127612.5149781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -41,13 +41,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TheAwesomePlanet/Network/DataProviderConvinience.swift"
-            timestampString = "593122923.500409"
+            filePath = "TheAwesomePlanet/ViewModel/TheAwesomePlanetViewModel.swift"
+            timestampString = "593127612.515371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fetchCities()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheAwesomePlanet/Network/DataProviderConvinience.swift"
+            timestampString = "593127612.515433"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "getCities(completionHandlerForCities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheAwesomePlanet/ViewModel/TheAwesomePlanetViewModel.swift"
+            timestampString = "593127612.515484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchCities()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
