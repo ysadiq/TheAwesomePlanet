@@ -11,13 +11,14 @@ extension DataProvider {
     // MARK: Cities (GET) Methods
     func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void) {
 
-        guard let citiesAPI = Constants.citiesAPI else {
+        guard let citiesAPI = Constants.citiesAPIURL else {
             return
         }
         
         let _ = taskForGETMethod(citiesAPI) { (data, error) in
             guard error == nil,
                 let data = data else {
+                    completionHandlerForCities(nil, error)
                     return
             }
 
@@ -25,7 +26,8 @@ extension DataProvider {
                 let cities: [City] = try JSONDecoder().decode([City].self, from: data)
                 completionHandlerForCities(cities, nil)
             } catch(let error) {
-                print("\(error)")
+                let userInfo = [NSLocalizedDescriptionKey : error.localizedDescription]
+                completionHandlerForCities(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
             }
         }
     }

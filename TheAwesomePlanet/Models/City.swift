@@ -16,11 +16,6 @@ class City: Decodable {
     var name: String?
     var coordinate: Coordinate?
 
-    struct Coordinate: Codable {
-        var lat: Double
-        var lon: Double
-    }
-
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case country
