@@ -122,9 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				99B184A2235A080E0005E952 /* AppDelegate.swift */,
-				99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */,
-				99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */,
 				99B184E2235A5E6F0005E952 /* GCD.swift */,
+				99B184EC235AD5880005E952 /* ViewControllers */,
+				99B184ED235AD5980005E952 /* Cells */,
 				99B184D4235A17870005E952 /* Network */,
 				99B184D5235A179F0005E952 /* ViewModel */,
 				99B184DB235A19360005E952 /* Models */,
@@ -191,6 +191,14 @@
 				99B184E6235A60B20005E952 /* Coordinate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		99B184ED235AD5980005E952 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
