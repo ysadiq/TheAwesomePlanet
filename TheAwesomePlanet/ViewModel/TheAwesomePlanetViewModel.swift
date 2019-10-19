@@ -51,14 +51,13 @@ class TheAwesomePlanetViewModel {
     func fetchCities() {
         self.isLoading = true
         dataManager.getCities {[weak self] (cities, error) in
-            guard error == nil,
-                let cities = cities else {
-                    self?.alertMessage = error?.localizedDescription
-                    return
-            }
-
             guard let self = self else {
                 return
+            }
+            guard error == nil,
+                let cities = cities else {
+                    self.alertMessage = error?.localizedDescription
+                    return
             }
             self.processFetchedCities(self.sortCities(cities))
             self.isLoading = false

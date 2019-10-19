@@ -26,9 +26,10 @@ class TheAwesomePlanetViewController: UIViewController {
 
     private func initViewModel() {
         viewModel.showAlertClosure = { [weak self] () in
-            performUIUpdatesOnMain {
+            performUIUpdatesOnMain { [weak self] in
                 if let message = self?.viewModel.alertMessage {
-                    //self?.showMessagePrompt(message)
+                    self?.showAlert(message)
+                    self?.activityIndicator.stopAnimating()
                 }
             }
         }
@@ -54,10 +55,21 @@ class TheAwesomePlanetViewController: UIViewController {
 
         viewModel.reloadTableViewClosure = { [weak self] () in
             performUIUpdatesOnMain {
+                self?.tableView.setContentOffset(.zero, animated: true)
                 self?.tableView.reloadData()
             }
         }
         viewModel.fetchCities()
+    }
+
+    func showAlert( _ message: String ) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
 
