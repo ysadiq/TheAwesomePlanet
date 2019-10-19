@@ -8,15 +8,19 @@
 
 import Foundation
 
+protocol CellViewModelProtocol {
+//    func createCityCellViewModel(_ city: City) -> CellViewModelProtocol?
+}
+
 class TheAwesomePlanetViewModel {
     let dataManager: DataProvider
-    private var cellViewModels: [CityCellViewModel] = [CityCellViewModel]() {
+    var cellViewModels: [CellViewModelProtocol] = [CellViewModelProtocol]() {
         didSet {
             self.reloadTableViewClosure?()
         }
     }
 
-    private var filteredCellViewModels: [CityCellViewModel] = [CityCellViewModel]() {
+    var filteredCellViewModels: [CellViewModelProtocol] = [CellViewModelProtocol]() {
         didSet {
             self.reloadTableViewClosure?()
         }
@@ -48,66 +52,26 @@ class TheAwesomePlanetViewModel {
         self.dataManager = dataManager
     }
 
-    func fetchCities() {
-        self.isLoading = true
-        dataManager.getCities {[weak self] (cities, error) in
-            guard let self = self else {
-                return
-            }
-            guard error == nil,
-                let cities = cities else {
-                    self.alertMessage = error?.localizedDescription
-                    return
-            }
-            self.processFetchedCities(self.sortCities(cities))
-            self.isLoading = false
-        }
-    }
-
-    func filterCities(_ searchText: String) {
-        if searchText != "" {
-            filteredCellViewModels = cellViewModels.filter {
-                return $0.name.lowercased().starts(with: searchText.lowercased())
-            }
-        } else {
-            filteredCellViewModels = cellViewModels
-        }
-    }
-
-    private func sortCities(_ cities: [City]) -> [City] {
-        return cities.sorted(by: { $0.name! < $1.name! })
-    }
-
-    func getCityCellViewModel(at indexPath: IndexPath) -> CityCellViewModel? {
+    func getCellViewModel(at indexPath: IndexPath) -> CellViewModelProtocol? {
         guard indexPath.row < numberOfCells else {
             return nil
         }
         return isFiltering() ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
     }
 
-    private func isFiltering() -> Bool {
+    func isFiltering() -> Bool {
         return filteredCellViewModels.count > 0 && filteredCellViewModels.count != cellViewModels.count
     }
-    private func processFetchedCities(_ cities: [City]) {
-        var vms = [CityCellViewModel]()
-        for city in cities {
-            guard let cityCellViewModel = createCellViewModel(city) else {
-                continue
+
+    @discardableResult
+    func filter(_ searchText: String,_ cityCell: CellViewModelProtocol? = nil) -> Bool {
+        if searchText != "" {
+            filteredCellViewModels = cellViewModels.filter {
+                return filter(searchText, $0)
             }
-            vms.append(cityCellViewModel)
+        } else {
+            filteredCellViewModels = cellViewModels
         }
-        self.cellViewModels = vms
-    }
-
-    private func createCellViewModel(_ city: City) -> CityCellViewModel? {
-        guard let name = city.name,
-            let country = city.country,
-            let coord = city.coordinate else {
-                return nil
-        }
-
-        return CityCellViewModel(name: name,
-                                 country: country,
-                                 coordinate: coord)
+        return false
     }
 }

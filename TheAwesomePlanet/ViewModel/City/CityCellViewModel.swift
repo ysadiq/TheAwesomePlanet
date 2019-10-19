@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CityCellViewModel {
+struct CityCellViewModel: CellViewModelProtocol {
     let name: String
     let country: String
     let coordinate: Coordinate

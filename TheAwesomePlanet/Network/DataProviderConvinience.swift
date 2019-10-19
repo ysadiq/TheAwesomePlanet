@@ -10,7 +10,6 @@ import Foundation
 extension DataProvider {
     // MARK: Cities (GET) Methods
     func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void) {
-
         guard let citiesAPI = Constants.API.citiesShort else {
             return
         }
@@ -28,6 +27,29 @@ extension DataProvider {
             } catch(let error) {
                 let userInfo = [NSLocalizedDescriptionKey : error.localizedDescription]
                 completionHandlerForCities(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+        }
+    }
+
+    // MARK: AboutInfo (GET) Methods
+    func getAboutInfo(completionHandlerForAboutInfo: @escaping (_ result: AboutInfo?, _ error : NSError?) -> Void) {
+        guard let aboutInfoAPI = Constants.API.aboutInfo else {
+            return
+        }
+
+        let _ = taskForGETMethod(aboutInfoAPI) { (data, error) in
+            guard error == nil,
+                let data = data else {
+                    completionHandlerForAboutInfo(nil, error)
+                    return
+            }
+
+            do {
+                let aboutInfo: AboutInfo = try JSONDecoder().decode(AboutInfo.self, from: data)
+                completionHandlerForAboutInfo(aboutInfo, nil)
+            } catch(let error) {
+                let userInfo = [NSLocalizedDescriptionKey : error.localizedDescription]
+                completionHandlerForAboutInfo(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
             }
         }
     }

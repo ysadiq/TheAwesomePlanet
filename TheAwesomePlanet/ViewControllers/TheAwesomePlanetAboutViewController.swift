@@ -1,26 +1,28 @@
 //
-//  TheAwesomePlanetViewController.swift
+//  TheAwesomePlanetAboutViewController.swift
 //  TheAwesomePlanet
 //
-//  Created by Yahya Saddiq on 10/18/19.
+//  Created by Yahya Saddiq on 10/19/19.
 //  Copyright © 2019 Yahya Saddiq. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-final class TheAwesomePlanetViewController: UIViewController {
+// MARK: - AboutViewController implementation
+final class TheAwesomePlanetAboutViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var selectedCity: CityCellViewModel?
-    
-    lazy var viewModel: CityViewModel = {
-        return CityViewModel()
+    let activityIndicator = UIActivityIndicatorView(style: .gray)
+    lazy var viewModel: AboutInfoViewModel = {
+        return AboutInfoViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.titleView = activityIndicator
+        activityIndicator.hidesWhenStopped = true
         initViewModel()
     }
 
@@ -41,13 +43,11 @@ final class TheAwesomePlanetViewController: UIViewController {
                     self?.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 0.0
-                        self?.searchBar.alpha = 0.0
                     })
                 }else {
                     self?.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 1.0
-                        self?.searchBar.alpha = 1.0
                     })
                 }
             }
@@ -55,11 +55,10 @@ final class TheAwesomePlanetViewController: UIViewController {
 
         viewModel.reloadTableViewClosure = { [weak self] () in
             performUIUpdatesOnMain {
-                self?.tableView.setContentOffset(.zero, animated: true)
                 self?.tableView.reloadData()
             }
         }
-        viewModel.fetchCities()
+        viewModel.fetchAboutInfo()
     }
 
     func showAlert( _ message: String ) {
@@ -74,51 +73,24 @@ final class TheAwesomePlanetViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource methods
-extension TheAwesomePlanetViewController: UITableViewDataSource {
+extension TheAwesomePlanetAboutViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TheAwesomePlanetCityCell",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TheAwesomePlanetAboutInfoCell",
                                                  for: indexPath)
-        guard let cellItem = cell as? TheAwesomePlanetCityCell,
-            let cityCellViewModel = viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel else {
-            return cell
+        guard let cellItem = cell as? TheAwesomePlanetAboutInfoCell,
+            let aboutInfoCellViewModel = viewModel.getCellViewModel(at: indexPath) as? AboutInfoCellViewModel else {
+                return cell
         }
 
-        cellItem.configure(with: cityCellViewModel)
-
+        cellItem.configure(with: aboutInfoCellViewModel)
         return cell
-    }
-}
-
-extension TheAwesomePlanetViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let city = (viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel) else {
-            return nil
-        }
-        selectedCity = city
-        return indexPath
-    }
-}
-
-
-extension TheAwesomePlanetViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
-        viewModel.filter(searchText)
-    }
-}
-
-extension TheAwesomePlanetViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mapViewController = segue.destination as? TheAwesomePlanetMapViewController else {
-            return
-        }
-
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
-        mapViewController.city = selectedCity
     }
 }

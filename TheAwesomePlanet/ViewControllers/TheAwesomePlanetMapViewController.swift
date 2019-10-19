@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class TheAwesomePlanetMapViewController: UIViewController {
+final class TheAwesomePlanetMapViewController: UIViewController {
     var city: CityCellViewModel?
     var annotation: MKPointAnnotation?
     @IBOutlet var mapView: MKMapView!

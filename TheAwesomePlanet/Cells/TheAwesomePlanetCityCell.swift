@@ -1,5 +1,5 @@
 //
-//  TheAwesomePlanetCell.swift
+//  TheAwesomePlanetCityCell.swift
 //  TheAwesomePlanet
 //
 //  Created by Yahya Saddiq on 10/18/19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TheAwesomePlanetCell: UITableViewCell {
+class TheAwesomePlanetCityCell: UITableViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var subTitle: UILabel!
     @IBOutlet var showDetail: UIButton!

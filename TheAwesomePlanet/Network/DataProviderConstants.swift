@@ -15,6 +15,7 @@ extension DataProvider {
         struct API {
             static let cities = Bundle.main.url(forResource: "cities", withExtension: "json")
             static let citiesShort = Bundle.main.url(forResource: "cities(short)", withExtension: "json")
+            static let aboutInfo = Bundle.main.url(forResource: "aboutInfo", withExtension: "json")
         }
     }
 }
