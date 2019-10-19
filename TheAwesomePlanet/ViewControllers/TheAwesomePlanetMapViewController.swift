@@ -12,11 +12,16 @@ import MapKit
 
 class TheAwesomePlanetMapViewController: UIViewController {
     var city: CityCellViewModel?
+    var annotation: MKPointAnnotation?
     @IBOutlet var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMapView()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     private func configureMapView() {
@@ -28,10 +33,17 @@ class TheAwesomePlanetMapViewController: UIViewController {
                                                     longitude: city.coordinate.lon)
         mapView.setCenter(cityCoordinate, animated: true)
 
-        let annotation = MKPointAnnotation()
-        annotation.title = city.name
-        annotation.coordinate = cityCoordinate
-        mapView.addAnnotation(annotation)
+        annotation = MKPointAnnotation()
+        annotation?.title = city.name
+        annotation?.coordinate = cityCoordinate
     }
-    
+}
+
+extension TheAwesomePlanetMapViewController: MKMapViewDelegate {
+    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        if let annotation = annotation {
+            mapView.addAnnotation(annotation)
+            mapView.selectAnnotation(annotation, animated: true)
+        }
+    }
 }
