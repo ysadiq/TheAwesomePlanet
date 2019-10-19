@@ -13,6 +13,7 @@ class TheAwesomePlanetViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var selectedCity: CityCellViewModel?
     
     lazy var viewModel: TheAwesomePlanetViewModel = {
         return TheAwesomePlanetViewModel()
@@ -92,8 +93,29 @@ extension TheAwesomePlanetViewController: UITableViewDataSource {
     }
 }
 
+extension TheAwesomePlanetViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedCity = viewModel.getCityCellViewModel(at: indexPath)
+        return indexPath
+    }
+}
+
+
 extension TheAwesomePlanetViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
         viewModel.filterCities(searchText)
+    }
+}
+
+extension TheAwesomePlanetViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mapViewController = segue.destination as? TheAwesomePlanetMapViewController else {
+            return
+        }
+
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+        mapViewController.city = selectedCity
     }
 }

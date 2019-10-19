@@ -26,6 +26,7 @@
 		99B184E7235A60B20005E952 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E6235A60B20005E952 /* Coordinate.swift */; };
 		99B184E9235A63EC0005E952 /* TheAwesomePlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */; };
 		99B184EB235A725F0005E952 /* cities(short).json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184EA235A725F0005E952 /* cities(short).json */; };
+		99B184EF235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		99B184E6235A60B20005E952 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		99B184E8235A63EC0005E952 /* TheAwesomePlanetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetCell.swift; sourceTree = "<group>"; };
 		99B184EA235A725F0005E952 /* cities(short).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cities(short).json"; sourceTree = "<group>"; };
+		99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,15 @@
 				99B184E6235A60B20005E952 /* Coordinate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		99B184EC235AD5880005E952 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */,
+				99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		99B184ED235AD5980005E952 /* Cells */ = {
@@ -340,6 +351,7 @@
 				99B184E9235A63EC0005E952 /* TheAwesomePlanetCell.swift in Sources */,
 				99B184DA235A19320005E952 /* City.swift in Sources */,
 				99B184DD235A1B390005E952 /* CLLocation+Codable.swift in Sources */,
+				99B184EF235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift in Sources */,
 				99B184E7235A60B20005E952 /* Coordinate.swift in Sources */,
 				99B184D8235A18CF0005E952 /* DataProviderConvinience.swift in Sources */,
 				99B184E3235A5E6F0005E952 /* GCD.swift in Sources */,

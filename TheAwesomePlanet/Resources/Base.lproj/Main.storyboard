@@ -97,6 +97,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="YPm-mV-O7n"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NYi-AJ-jfx"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -125,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--The Awesome Planet Map View Controller-->
         <scene sceneID="yd3-Ih-KeH">
             <objects>
-                <viewController id="RVG-df-CvN" sceneMemberID="viewController">
+                <viewController id="RVG-df-CvN" customClass="TheAwesomePlanetMapViewController" customModule="TheAwesomePlanet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O0b-ku-Dk6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,6 +148,9 @@
                         <viewLayoutGuide key="safeArea" id="5jj-ll-Wie"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nt6-6k-k9t"/>
+                    <connections>
+                        <outlet property="mapView" destination="TRI-1E-osO" id="cn3-0s-CWh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLN-r3-BqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
