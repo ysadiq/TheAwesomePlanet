@@ -34,6 +34,7 @@
 		99B184FC235AF7270005E952 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184FB235AF7270005E952 /* CityViewModel.swift */; };
 		99B18500235B14C80005E952 /* AboutInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */; };
 		99B18506235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */; };
+		99B18508235B54F50005E952 /* TheAwesomePlanetCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		99B184FB235AF7270005E952 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoViewModel.swift; sourceTree = "<group>"; };
 		99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutInfoCell.swift; sourceTree = "<group>"; };
+		99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TheAwesomePlanetCityCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			children = (
 				99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */,
 				99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */,
+				99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				99B184EB235A725F0005E952 /* cities(short).json in Resources */,
 				99B184AA235A08100005E952 /* Assets.xcassets in Resources */,
 				99B184A8235A080E0005E952 /* Main.storyboard in Resources */,
+				99B18508235B54F50005E952 /* TheAwesomePlanetCityCell.xib in Resources */,
 				99B184F8235AECDA0005E952 /* aboutInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

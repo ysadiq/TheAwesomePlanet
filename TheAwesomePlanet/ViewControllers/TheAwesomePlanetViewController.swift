@@ -21,6 +21,7 @@ final class TheAwesomePlanetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "TheAwesomePlanetCityCell", bundle: nil), forCellReuseIdentifier: "TheAwesomePlanetCityCell")
         initViewModel()
     }
 
@@ -88,6 +89,7 @@ extension TheAwesomePlanetViewController: UITableViewDataSource {
         }
 
         cellItem.configure(with: cityCellViewModel)
+        cellItem.delegate = self
 
         return cell
     }
@@ -100,6 +102,10 @@ extension TheAwesomePlanetViewController: UITableViewDelegate {
         }
         selectedCity = city
         return indexPath
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showMap", sender: tableView)
     }
 }
 
@@ -120,5 +126,11 @@ extension TheAwesomePlanetViewController {
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
         mapViewController.city = selectedCity
+    }
+}
+
+extension TheAwesomePlanetViewController: TheAwesomePlanetCityCellDelegate {
+    func showDetailsButtonPressed(_ cell: TheAwesomePlanetCityCell) {
+        performSegue(withIdentifier: "showDetails", sender: tableView)
     }
 }

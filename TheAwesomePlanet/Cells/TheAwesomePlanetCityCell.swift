@@ -12,14 +12,24 @@ import UIKit
 class TheAwesomePlanetCityCell: UITableViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var subTitle: UILabel!
-    @IBOutlet var showDetail: UIButton!
+    @IBOutlet var showDetailsButton: UIButton!
+    var delegate: TheAwesomePlanetCityCellDelegate?
 
     func configure(with cityCellViewModel: CityCellViewModel) {
         performUIUpdatesOnMain { [weak self] in
             self?.title.text = "\(cityCellViewModel.name), \(cityCellViewModel.country)"
             self?.subTitle.text = "\(cityCellViewModel.coordinate.lat), \(cityCellViewModel.coordinate.lon)"
-            self?.showDetail.setTitle("Discover \(cityCellViewModel.name)",for: .normal)
-            self?.showDetail.layer.cornerRadius = 4
+            self?.showDetailsButton.setTitle("Discover \(cityCellViewModel.name)",for: .normal)
+            self?.showDetailsButton.layer.cornerRadius = 4
         }
     }
+
+    @IBAction func showDetailsButtonPressed() {
+        delegate?.showDetailsButtonPressed(self)
+    }
+}
+
+// MARK: - TheAwesomePlanetCity Cell Delegate Protocol
+protocol TheAwesomePlanetCityCellDelegate {
+    func showDetailsButtonPressed(_ cell: TheAwesomePlanetCityCell)
 }
