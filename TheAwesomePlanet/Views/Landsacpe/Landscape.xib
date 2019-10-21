@@ -50,6 +50,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="mapView" destination="NYo-kI-5aQ" id="Fs6-1G-vaT"/>
                 <outlet property="searchBar" destination="Own-rH-pns" id="8ln-ZS-bXU"/>
                 <outlet property="tableView" destination="6bW-6v-Q9T" id="zP4-WP-cvF"/>
             </connections>

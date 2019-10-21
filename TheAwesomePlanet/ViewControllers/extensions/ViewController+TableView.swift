@@ -53,9 +53,15 @@ extension TheAwesomePlanetViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard UIDevice.current.orientation.isPortrait else {
-            return
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
+            guard let selectedCity = selectedCity else {
+                return
+            }
+            landscapeView.configureMapView(selectedCity)
+        default:
+            performSegue(withIdentifier: "showMap", sender: tableView)
         }
-        performSegue(withIdentifier: "showMap", sender: tableView)
+
     }
 }
