@@ -226,9 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */,
-				99DBAF78235DB2210056A898 /* ViewController+TableView.swift */,
 				99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */,
 				99B184F0235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift */,
+				99DBAF7A235DB3C20056A898 /* extensions */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -305,6 +305,14 @@
 				99DBAF76235D8FEF0056A898 /* LandscapeView.swift */,
 			);
 			path = Landsacpe;
+			sourceTree = "<group>";
+		};
+		99DBAF7A235DB3C20056A898 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99DBAF78235DB2210056A898 /* ViewController+TableView.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
