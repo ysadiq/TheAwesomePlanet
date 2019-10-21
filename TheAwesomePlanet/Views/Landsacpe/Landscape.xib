@@ -16,22 +16,38 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Own-rH-pns">
-                    <rect key="frame" x="64" y="6" width="386" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-6v-Q9T">
-                    <rect key="frame" x="64" y="50" width="386" height="364"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NYo-kI-5aQ">
-                    <rect key="frame" x="450" y="0.0" width="446" height="414"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </mapView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyX-au-96l">
+                    <rect key="frame" x="44" y="0.0" width="852" height="414"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KwF-xg-EYU">
+                            <rect key="frame" x="0.0" y="0.0" width="386" height="414"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Own-rH-pns">
+                                    <rect key="frame" x="0.0" y="0.0" width="386" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-6v-Q9T">
+                                    <rect key="frame" x="0.0" y="56" width="386" height="358"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                        </stackView>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NYo-kI-5aQ">
+                            <rect key="frame" x="386" y="0.0" width="466" height="414"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="466" id="CbQ-3t-Lp9"/>
+                            </constraints>
+                        </mapView>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cyX-au-96l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1zd-zT-5xX"/>
+                <constraint firstAttribute="bottom" secondItem="cyX-au-96l" secondAttribute="bottom" id="EE5-ZG-vas"/>
+                <constraint firstAttribute="trailing" secondItem="cyX-au-96l" secondAttribute="trailing" id="JZc-vt-hSO"/>
+                <constraint firstItem="cyX-au-96l" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="S3b-XP-Xir"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="searchBar" destination="Own-rH-pns" id="8ln-ZS-bXU"/>

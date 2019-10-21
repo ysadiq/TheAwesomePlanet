@@ -39,6 +39,7 @@
 		99DBAF70235D6F7F0056A898 /* Landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAF6F235D6F7F0056A898 /* Landscape.xib */; };
 		99DBAF75235D7D570056A898 /* PotraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF74235D7D570056A898 /* PotraitView.swift */; };
 		99DBAF77235D8FEF0056A898 /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF76235D8FEF0056A898 /* LandscapeView.swift */; };
+		99DBAF79235DB2210056A898 /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF78235DB2210056A898 /* ViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		99DBAF6F235D6F7F0056A898 /* Landscape.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Landscape.xib; sourceTree = "<group>"; };
 		99DBAF74235D7D570056A898 /* PotraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotraitView.swift; sourceTree = "<group>"; };
 		99DBAF76235D8FEF0056A898 /* LandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
+		99DBAF78235DB2210056A898 /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,11 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				99B184AE235A08100005E952 /* Info.plist */,
-				99B184A6235A080E0005E952 /* Main.storyboard */,
 				99B184A9235A08100005E952 /* Assets.xcassets */,
-				99B184AB235A08100005E952 /* LaunchScreen.storyboard */,
-				99B184EA235A725F0005E952 /* cities(short).json */,
 				99B184E0235A1C4E0005E952 /* cities.json */,
+				99B184EA235A725F0005E952 /* cities(short).json */,
 				99B184F7235AECD90005E952 /* aboutInfo.json */,
 			);
 			path = Resources;
@@ -226,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */,
+				99DBAF78235DB2210056A898 /* ViewController+TableView.swift */,
 				99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */,
 				99B184F0235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift */,
 			);
@@ -280,6 +281,8 @@
 		99DBAF71235D7D1B0056A898 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99B184A6235A080E0005E952 /* Main.storyboard */,
+				99B184AB235A08100005E952 /* LaunchScreen.storyboard */,
 				99DBAF72235D7D290056A898 /* Portrait */,
 				99DBAF73235D7D340056A898 /* Landsacpe */,
 			);
@@ -461,6 +464,7 @@
 				99DBAF77235D8FEF0056A898 /* LandscapeView.swift in Sources */,
 				99B184D3235A15DE0005E952 /* DataProvider.swift in Sources */,
 				99B184D1235A15650005E952 /* TheAwesomePlanetViewModel.swift in Sources */,
+				99DBAF79235DB2210056A898 /* ViewController+TableView.swift in Sources */,
 				99B184E5235A5FDD0005E952 /* CityCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

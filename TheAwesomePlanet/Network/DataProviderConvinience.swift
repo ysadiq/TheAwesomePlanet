@@ -10,7 +10,7 @@ import Foundation
 extension DataProvider {
     // MARK: Cities (GET) Methods
     func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void) {
-        guard let citiesAPI = Constants.API.citiesShort else {
+        guard let citiesAPI = Constants.API.cities else {
             return
         }
         

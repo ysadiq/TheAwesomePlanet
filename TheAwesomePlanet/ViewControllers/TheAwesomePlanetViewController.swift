@@ -69,17 +69,6 @@ final class TheAwesomePlanetViewController: UIViewController {
         view.addSubview(landscapeView)
     }
 
-    var tableView: UITableView {
-        switch UIDevice.current.orientation {
-        case .portrait:
-            return portraitView.tableView
-        case .landscapeLeft, .landscapeRight:
-            return landscapeView.tableView
-        default:
-            return portraitView.tableView
-        }
-    }
-
     var searchBar: UISearchBar {
         switch UIDevice.current.orientation {
         case .portrait:
@@ -148,43 +137,27 @@ final class TheAwesomePlanetViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
 
-// MARK: - UITableViewDataSource methods
-extension TheAwesomePlanetViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfCells
-    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            navigationController?.isToolbarHidden = true
+            self.view.layoutIfNeeded()
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TheAwesomePlanetCityCell",
-                                                 for: indexPath)
-        guard let cellItem = cell as? TheAwesomePlanetCityCell,
-            let cityCellViewModel = viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel else {
-            return cell
+            UIView.animate(withDuration: 0.1) { [weak self] in
+                self?.portraitView.alpha = 0
+                self?.landscapeView.alpha = 1
+                self?.tableView.reloadData()
+            }
+        } else {
+            UIView.animate(withDuration: 0.1) { [weak self] in
+                self?.landscapeView.alpha = 0
+                self?.portraitView.alpha = 1
+                self?.tableView.reloadData()
+            }
         }
-
-        cellItem.configure(with: cityCellViewModel)
-        cellItem.delegate = self
-
-        return cell
     }
 }
-
-extension TheAwesomePlanetViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard let city = (viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel) else {
-            return nil
-        }
-        selectedCity = city
-        return indexPath
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showMap", sender: tableView)
-    }
-}
-
 
 extension TheAwesomePlanetViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
