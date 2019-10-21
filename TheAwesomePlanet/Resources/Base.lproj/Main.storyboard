@@ -17,46 +17,11 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="udV-wN-BzI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xax-tf-3Hx"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="daW-Au-hpm">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YPm-mV-O7n"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NYi-AJ-jfx"/>
-                                </connections>
-                            </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-BE-nVw">
-                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="u7d-BE-nVw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AZF-5a-NVb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="daW-Au-hpm" secondAttribute="trailing" id="E0G-tk-e6u"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="daW-Au-hpm" secondAttribute="bottom" id="HEw-8h-MRN"/>
-                            <constraint firstItem="daW-Au-hpm" firstAttribute="top" secondItem="udV-wN-BzI" secondAttribute="top" constant="56" id="Hew-MX-eyW"/>
-                            <constraint firstItem="daW-Au-hpm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aPO-N2-pwV"/>
-                            <constraint firstItem="udV-wN-BzI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f2D-N6-wqE"/>
-                            <constraint firstItem="u7d-BE-nVw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fEb-qj-6Bx"/>
-                            <constraint firstItem="udV-wN-BzI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qfL-sJ-ddF"/>
-                            <constraint firstItem="udV-wN-BzI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rZy-6i-o4Q"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="The Awesome Planet" id="boj-vI-oas"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="u7d-BE-nVw" id="5N5-uN-LFg"/>
-                        <outlet property="searchBar" destination="udV-wN-BzI" id="MmV-4I-2G4"/>
-                        <outlet property="tableView" destination="daW-Au-hpm" id="HLb-2n-Q2b"/>
                         <segue destination="RVG-df-CvN" kind="show" identifier="showMap" id="LmS-HX-ybC"/>
                         <segue destination="Jsy-vE-8s4" kind="show" identifier="showDetails" id="5zF-4E-9KD"/>
                     </connections>

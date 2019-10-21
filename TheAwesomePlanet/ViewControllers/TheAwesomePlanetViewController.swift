@@ -7,23 +7,101 @@
 //
 
 import UIKit
+import MapKit
 
 final class TheAwesomePlanetViewController: UIViewController {
     // MARK: - Properties
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: UIActivityIndicatorView!
+    var portraitView: PortraitView!
+    var landscapeView: LandscapeView!
+
     var selectedCity: CityCellViewModel?
-    
     lazy var viewModel: CityViewModel = {
         return CityViewModel()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "TheAwesomePlanetCityCell", bundle: nil), forCellReuseIdentifier: "TheAwesomePlanetCityCell")
+        initPortriatView()
+        initLandsacpeView()
+        initActivityIndicatory()
         initViewModel()
     }
+
+    private func initActivityIndicatory() {
+        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.color = .black
+        activityIndicator.center = self.view.center
+        view.addSubview(activityIndicator)
+    }
+
+    private func initPortriatView() {
+        guard let pView = UINib(nibName: "Portrait", bundle: .main).instantiate(withOwner: nil, options: nil).first as? PortraitView else {
+            return
+        }
+        portraitView = pView
+        portraitView.frame = CGRect(origin: CGPoint.zero, size: view.frame.size)
+
+        portraitView.tableView.delegate = self
+        portraitView.tableView.dataSource = self
+        portraitView.searchBar.delegate = self
+
+        portraitView.tableView.register(UINib(nibName: "TheAwesomePlanetCityCell", bundle: nil), forCellReuseIdentifier: "TheAwesomePlanetCityCell")
+
+        portraitView.alpha = 0
+        view.addSubview(portraitView)
+    }
+
+    private func initLandsacpeView() {
+        guard let lView = UINib(nibName: "Landscape", bundle: .main).instantiate(withOwner: nil, options: nil).first as? LandscapeView else {
+            return
+        }
+        landscapeView = lView
+        landscapeView.frame = CGRect(origin: CGPoint.zero, size: view.frame.size)
+
+        landscapeView.tableView.delegate = self
+        landscapeView.tableView.dataSource = self
+        landscapeView.searchBar.delegate = self
+
+        landscapeView.tableView.register(UINib(nibName: "TheAwesomePlanetCityCell", bundle: nil), forCellReuseIdentifier: "TheAwesomePlanetCityCell")
+
+        landscapeView.alpha = 0
+        view.addSubview(landscapeView)
+    }
+
+    var tableView: UITableView {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView.tableView
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView.tableView
+        default:
+            return portraitView.tableView
+        }
+    }
+
+    var searchBar: UISearchBar {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView.searchBar
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView.searchBar
+        default:
+            return portraitView.searchBar
+        }
+    }
+
+    var _view: UIView {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView
+        default:
+            return portraitView
+        }
+    }
+
 
     private func initViewModel() {
         viewModel.showAlertClosure = { [weak self] () in
@@ -41,14 +119,12 @@ final class TheAwesomePlanetViewController: UIViewController {
                 if isLoading {
                     self?.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?.tableView.alpha = 0.0
-                        self?.searchBar.alpha = 0.0
+                        self?._view.alpha = 0.0
                     })
                 }else {
                     self?.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?.tableView.alpha = 1.0
-                        self?.searchBar.alpha = 1.0
+                        self?._view.alpha = 1.0
                     })
                 }
             }
