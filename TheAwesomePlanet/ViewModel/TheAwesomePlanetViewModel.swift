@@ -13,7 +13,7 @@ protocol CellViewModelProtocol {
 }
 
 class TheAwesomePlanetViewModel {
-    let dataManager: DataProvider
+    let dataManager: DataProviderProtocol
     var cellViewModels: [CellViewModelProtocol] = [CellViewModelProtocol]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -40,15 +40,16 @@ class TheAwesomePlanetViewModel {
     }
 
     var numberOfCells: Int {
-        return isFiltering() ? filteredCellViewModels.count : cellViewModels.count
+        return isFiltering ? filteredCellViewModels.count : cellViewModels.count
     }
+    var isFiltering: Bool = false
 
     // interfaces
     var reloadTableViewClosure: (()->())?
     var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
 
-    init(dataManager: DataProvider = DataProvider()) {
+    init(dataManager: DataProviderProtocol = DataProvider()) {
         self.dataManager = dataManager
     }
 
@@ -56,22 +57,21 @@ class TheAwesomePlanetViewModel {
         guard indexPath.row < numberOfCells else {
             return nil
         }
-        return isFiltering() ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
-    }
-
-    func isFiltering() -> Bool {
-        return filteredCellViewModels.count > 0 && filteredCellViewModels.count != cellViewModels.count
+        return isFiltering ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
     }
 
     @discardableResult
     func filter(_ searchText: String,_ cityCell: CellViewModelProtocol? = nil) -> Bool {
-        if searchText != "" {
-            filteredCellViewModels = cellViewModels.filter {
-                return filter(searchText, $0)
-            }
-        } else {
-            filteredCellViewModels = cellViewModels
+        guard searchText != "" else {
+            isFiltering = false
+            reloadTableViewClosure?()
+            return false
         }
+        isFiltering = true
+        filteredCellViewModels = cellViewModels.filter {
+            return filter(searchText, $0)
+        }
+        
         return false
     }
 }

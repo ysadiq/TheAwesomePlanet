@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 class City: Decodable {
-
+    
     var id: Int?
     var country: String?
     var name: String?

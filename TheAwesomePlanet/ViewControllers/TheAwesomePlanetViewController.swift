@@ -11,28 +11,59 @@ import MapKit
 
 final class TheAwesomePlanetViewController: UIViewController {
     // MARK: - Properties
-    var activityIndicator: UIActivityIndicatorView!
+    var activityIndicatorView: UIActivityIndicatorView!
     var portraitView: PortraitView!
     var landscapeView: LandscapeView!
 
     var selectedCity: CityCellViewModel?
-    lazy var viewModel: CityViewModel = {
-        return CityViewModel()
-    }()
+    lazy var viewModel: CityViewModel = CityViewModel()
 
+    var tableView: UITableView {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView.tableView
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView.tableView
+        default:
+            return portraitView.tableView
+        }
+    }
+
+    var searchBar: UISearchBar {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView.searchBar
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView.searchBar
+        default:
+            return portraitView.searchBar
+        }
+    }
+
+    var _view: UIView {
+        switch UIDevice.current.orientation {
+        case .portrait:
+            return portraitView
+        case .landscapeLeft, .landscapeRight:
+            return landscapeView
+        default:
+            return portraitView
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initPortriatView()
         initLandsacpeView()
-        initActivityIndicatory()
+        initActivityIndicatorView()
         initViewModel()
     }
 
-    private func initActivityIndicatory() {
-        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-        activityIndicator.color = .black
-        activityIndicator.center = self.view.center
-        view.addSubview(activityIndicator)
+    private func initActivityIndicatorView() {
+        activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicatorView.color = .black
+        activityIndicatorView.center = self.view.center
+        view.addSubview(activityIndicatorView)
     }
 
     private func initPortriatView() {
@@ -69,35 +100,12 @@ final class TheAwesomePlanetViewController: UIViewController {
         view.addSubview(landscapeView)
     }
 
-    var searchBar: UISearchBar {
-        switch UIDevice.current.orientation {
-        case .portrait:
-            return portraitView.searchBar
-        case .landscapeLeft, .landscapeRight:
-            return landscapeView.searchBar
-        default:
-            return portraitView.searchBar
-        }
-    }
-
-    var _view: UIView {
-        switch UIDevice.current.orientation {
-        case .portrait:
-            return portraitView
-        case .landscapeLeft, .landscapeRight:
-            return landscapeView
-        default:
-            return portraitView
-        }
-    }
-
-
-    private func initViewModel() {
+    func initViewModel() {
         viewModel.showAlertClosure = { [weak self] () in
             performUIUpdatesOnMain { [weak self] in
                 if let message = self?.viewModel.alertMessage {
                     self?.showAlert(message)
-                    self?.activityIndicator.stopAnimating()
+                    self?.activityIndicatorView.stopAnimating()
                 }
             }
         }
@@ -106,12 +114,12 @@ final class TheAwesomePlanetViewController: UIViewController {
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
-                    self?.activityIndicator.startAnimating()
+                    self?.activityIndicatorView.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?._view.alpha = 0.0
                     })
                 }else {
-                    self?.activityIndicator.stopAnimating()
+                    self?.activityIndicatorView.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?._view.alpha = 1.0
                     })
@@ -181,5 +189,48 @@ extension TheAwesomePlanetViewController {
 extension TheAwesomePlanetViewController: TheAwesomePlanetCityCellDelegate {
     func showDetailsButtonPressed(_ cell: TheAwesomePlanetCityCell) {
         performSegue(withIdentifier: "showDetails", sender: tableView)
+    }
+}
+
+extension TheAwesomePlanetViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfCells
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TheAwesomePlanetCityCell",
+                                                 for: indexPath)
+        guard let cellItem = cell as? TheAwesomePlanetCityCell,
+            let cityCellViewModel = viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel else {
+                return cell
+        }
+
+        cellItem.configure(with: cityCellViewModel)
+        cellItem.delegate = self
+
+        return cell
+    }
+}
+
+extension TheAwesomePlanetViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let city = (viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel) else {
+            return nil
+        }
+        selectedCity = city
+        return indexPath
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
+            guard let selectedCity = selectedCity else {
+                return
+            }
+            landscapeView.configureMapView(selectedCity)
+        default:
+            performSegue(withIdentifier: "showMap", sender: tableView)
+        }
+
     }
 }

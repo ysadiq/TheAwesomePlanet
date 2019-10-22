@@ -8,8 +8,15 @@
 
 import Foundation
 
+protocol DataProviderProtocol {
+    static func sharedInstance() -> DataProviderProtocol
+    func taskForGETMethod(_ url: URL, parameters: [String:Any]?, completionHandlerForGET: @escaping (_ result: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask?
+    func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void)
+    func getAboutInfo(completionHandlerForAboutInfo: @escaping (_ result: AboutInfo?, _ error : NSError?) -> Void)
+}
+
 // MARK: - DataProvider: NSObject
-class DataProvider : NSObject {
+class DataProvider : DataProviderProtocol {
 
     // MARK: Properties
 
@@ -18,7 +25,7 @@ class DataProvider : NSObject {
 
     // MARK: Shared Instance
 
-    class func sharedInstance() -> DataProvider {
+    class func sharedInstance() -> DataProviderProtocol {
         struct Singleton {
             static var sharedInstance = DataProvider()
         }
@@ -87,10 +94,5 @@ class DataProvider : NSObject {
         task.resume()
 
         return task
-    }
-
-    //for debuging
-    func printData(_ data: Data) {
-        print("data is \(NSString(data: data, encoding: String.Encoding.ascii.rawValue)!)")
     }
 }
