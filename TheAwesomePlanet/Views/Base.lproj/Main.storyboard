@@ -94,7 +94,7 @@
         <!--The Awesome Planet About View Controller-->
         <scene sceneID="c5z-KW-Epc">
             <objects>
-                <viewController id="Jsy-vE-8s4" customClass="TheAwesomePlanetAboutViewController" customModule="TheAwesomePlanet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TheAwesomePlanetAboutViewController" id="Jsy-vE-8s4" customClass="TheAwesomePlanetAboutViewController" customModule="TheAwesomePlanet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tAq-bk-t1f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

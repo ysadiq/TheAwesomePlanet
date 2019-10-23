@@ -167,12 +167,7 @@ final class TheAwesomePlanetViewController: UIViewController {
     }
 }
 
-extension TheAwesomePlanetViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
-        viewModel.filter(searchText)
-    }
-}
-
+// MARK: TheAwesomePlanetViewController Segue
 extension TheAwesomePlanetViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let mapViewController = segue.destination as? TheAwesomePlanetMapViewController else {
@@ -186,11 +181,15 @@ extension TheAwesomePlanetViewController {
     }
 }
 
+// MARK: TheAwesomePlanetCityCell Delegate
+
 extension TheAwesomePlanetViewController: TheAwesomePlanetCityCellDelegate {
     func showDetailsButtonPressed(_ cell: TheAwesomePlanetCityCell) {
         performSegue(withIdentifier: "showDetails", sender: tableView)
     }
 }
+
+// MARK: TableView Datasource
 
 extension TheAwesomePlanetViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -212,6 +211,8 @@ extension TheAwesomePlanetViewController: UITableViewDataSource {
     }
 }
 
+// MARK: TableView Datasource
+
 extension TheAwesomePlanetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         guard let city = (viewModel.getCellViewModel(at: indexPath) as? CityCellViewModel) else {
@@ -232,5 +233,14 @@ extension TheAwesomePlanetViewController: UITableViewDelegate {
             performSegue(withIdentifier: "showMap", sender: tableView)
         }
 
+    }
+}
+
+
+// MARK: UISearchBar Delegate
+
+extension TheAwesomePlanetViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText:String){
+        viewModel.filter(searchText)
     }
 }

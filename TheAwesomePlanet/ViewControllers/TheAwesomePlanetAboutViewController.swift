@@ -26,7 +26,7 @@ final class TheAwesomePlanetAboutViewController: UIViewController {
         initViewModel()
     }
 
-    private func initViewModel() {
+    func initViewModel() {
         viewModel.showAlertClosure = { [weak self] () in
             performUIUpdatesOnMain { [weak self] in
                 if let message = self?.viewModel.alertMessage {

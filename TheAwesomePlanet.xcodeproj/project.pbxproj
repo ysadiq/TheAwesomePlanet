@@ -42,6 +42,9 @@
 		99DBAF84235E47C00056A898 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF83235E47C00056A898 /* MockDataProvider.swift */; };
 		99DBAF97235F5C070056A898 /* CityViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF96235F5C070056A898 /* CityViewModelTests.swift */; };
 		99DBAF99235F5CB10056A898 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF98235F5CB10056A898 /* DataProviderTests.swift */; };
+		99DBAF9B235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */; };
+		99DBAF9D235F6F5D0056A898 /* AboutInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */; };
+		99DBAFA123601AE30056A898 /* cities(short).json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184EA235A725F0005E952 /* cities(short).json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,8 @@
 		99DBAF83235E47C00056A898 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		99DBAF96235F5C070056A898 /* CityViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelTests.swift; sourceTree = "<group>"; };
 		99DBAF98235F5CB10056A898 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
+		99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutViewControllerTests.swift; sourceTree = "<group>"; };
+		99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +176,9 @@
 			children = (
 				99DBAF82235E46C50056A898 /* Mocks */,
 				99DBAF80235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift */,
+				99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */,
 				99DBAF96235F5C070056A898 /* CityViewModelTests.swift */,
+				99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */,
 				99DBAF98235F5CB10056A898 /* DataProviderTests.swift */,
 				99B184B9235A08100005E952 /* Info.plist */,
 			);
@@ -441,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DBAFA123601AE30056A898 /* cities(short).json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +494,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DBAF9D235F6F5D0056A898 /* AboutInfoViewModelTests.swift in Sources */,
 				99DBAF81235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift in Sources */,
+				99DBAF9B235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift in Sources */,
 				99DBAF84235E47C00056A898 /* MockDataProvider.swift in Sources */,
 				99DBAF99235F5CB10056A898 /* DataProviderTests.swift in Sources */,
 				99DBAF97235F5C070056A898 /* CityViewModelTests.swift in Sources */,

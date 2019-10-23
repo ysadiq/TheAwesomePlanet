@@ -9,7 +9,7 @@
 import Foundation
 
 class AboutInfoViewModel: TheAwesomePlanetViewModel {
-    func fetchAboutInfo() {
+    func fetchAboutInfo(_ completionForFetchAboutInfo: ((_ status: Bool, _ error: Error?) -> Void)? = nil) {
         isLoading = true
         dataManager.getAboutInfo {[weak self] (aboutInfo, error) in
             guard let self = self else {
@@ -18,15 +18,17 @@ class AboutInfoViewModel: TheAwesomePlanetViewModel {
             guard error == nil,
                 let aboutInfo = aboutInfo else {
                     self.alertMessage = error?.localizedDescription
+                    if let completionForFetchAboutInfo = completionForFetchAboutInfo {
+                        completionForFetchAboutInfo(false, error)
+                    }
                     return
             }
             self.processFetchedAboutInfo(aboutInfo)
             self.isLoading = false
+            if let completionForFetchAboutInfo = completionForFetchAboutInfo {
+                completionForFetchAboutInfo(true, nil)
+            }
         }
-    }
-
-    private func sort(_ cities: [City]) -> [City] {
-        return cities.sorted(by: { $0.name! < $1.name! })
     }
 
     private func processFetchedAboutInfo(_ aboutInfo: AboutInfo) {

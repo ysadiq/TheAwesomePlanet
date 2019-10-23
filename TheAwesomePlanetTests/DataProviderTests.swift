@@ -12,6 +12,7 @@ import XCTest
 class DataProviderTests: XCTestCase {
     var sut: DataProvider!
     var closureExpectation: XCTestExpectation!
+    let expectationTimeout: TimeInterval = 100
     override func setUp() {
         super.setUp()
         sut = DataProvider()
@@ -26,8 +27,20 @@ class DataProviderTests: XCTestCase {
         sut.getCities { [weak self] (cities, _) in
             self?.closureExpectation.fulfill()
         }
-        wait(for: [closureExpectation], timeout: 5)
-        
+        wait(for: [closureExpectation], timeout: expectationTimeout)
     }
 
+    func testGetAboutInfo() {
+        closureExpectation = expectation(description: "Get AboutInfo Completed")
+        sut.getAboutInfo { [weak self] (aboutInfos, _) in
+            if aboutInfos?.companyName == "Backbase",
+                aboutInfos?.companyAddress == "Jacob Bontiusplaats 9",
+                aboutInfos?.city == "Amsterdam",
+                aboutInfos?.postalCode == "1018 LL",
+                aboutInfos?.details == "This is the Backbase iOS assignment" {
+                self?.closureExpectation.fulfill()
+            }
+        }
+        wait(for: [closureExpectation], timeout: expectationTimeout)
+    }
 }
