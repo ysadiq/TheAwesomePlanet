@@ -24,6 +24,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="TheAwesomePlanetView"/>
                         <constraints>
                             <constraint firstItem="u7d-BE-nVw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AZF-5a-NVb"/>
                             <constraint firstItem="u7d-BE-nVw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fEb-qj-6Bx"/>
@@ -56,6 +57,7 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="MapView"/>
                         <constraints>
                             <constraint firstItem="TRI-1E-osO" firstAttribute="top" secondItem="5jj-ll-Wie" secondAttribute="top" id="CRz-eN-VFt"/>
                             <constraint firstItem="5jj-ll-Wie" firstAttribute="trailing" secondItem="TRI-1E-osO" secondAttribute="trailing" id="He2-gB-wuq"/>
@@ -111,7 +113,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-QO-URI">
-                                                    <rect key="frame" x="25" y="16" width="763" height="19"/>
+                                                    <rect key="frame" x="25" y="16" width="369" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -135,6 +137,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="AboutInfoView"/>
                         <constraints>
                             <constraint firstItem="Mod-1B-kts" firstAttribute="trailing" secondItem="3rm-MP-rMe" secondAttribute="trailing" id="3CS-Mt-Bhi"/>
                             <constraint firstItem="3rm-MP-rMe" firstAttribute="top" secondItem="Mod-1B-kts" secondAttribute="top" id="hOp-MA-RNR"/>

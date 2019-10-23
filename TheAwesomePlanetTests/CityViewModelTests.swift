@@ -13,7 +13,7 @@ class CityViewModelTests: XCTestCase {
     var sut: CityViewModel!
     var closureExpectation: XCTestExpectation!
     let numberOfCities = 5
-    let expectationTimeout = 100.0
+    let expectationTimeout = 5.0
 
     override func setUp() {
         super.setUp()

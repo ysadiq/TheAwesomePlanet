@@ -38,6 +38,6 @@ class AboutInfoViewModelTests: XCTestCase {
                 self.closureExpectation.fulfill()
             }
         }
-        wait(for: [closureExpectation], timeout: 100)
+        wait(for: [closureExpectation], timeout: 5)
     }
 }
