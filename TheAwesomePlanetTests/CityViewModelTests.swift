@@ -11,14 +11,12 @@ import XCTest
 
 class CityViewModelTests: XCTestCase {
     var sut: CityViewModel!
-    var mockDataProvider: MockDataProvider!
     var closureExpectation: XCTestExpectation!
-    let numberOfCities = 209557
+    let numberOfCities = 5
     let expectationTimeout = 100.0
 
     override func setUp() {
         super.setUp()
-        mockDataProvider = MockDataProvider()
         sut = CityViewModel()
     }
 
@@ -28,29 +26,43 @@ class CityViewModelTests: XCTestCase {
         closureExpectation = nil
     }
 
-    func testFilteringCairo() {
-        closureExpectation = expectation(description: "Search for Cairo Completed")
+    func testFilteringForA() {
+        closureExpectation = expectation(description: "Search for A Completed")
         sut.fetchCities { [weak self] (status, _) in
             guard let self = self else {
                 return
             }
             XCTAssertEqual(self.sut.numberOfCells, self.numberOfCities)
-            self.sut.filter("Cairo")
-            XCTAssertEqual(self.sut.numberOfCells, 10)
+            self.sut.filter("A")
+            XCTAssertEqual(self.sut.numberOfCells, 4)
             self.closureExpectation.fulfill()
         }
         wait(for: [closureExpectation], timeout: expectationTimeout)
     }
 
-    func testFilteringAmsterdam() {
-        closureExpectation = expectation(description: "Search for Amsterdam Completed")
+    func testFilteringForAl() {
+        closureExpectation = expectation(description: "Search for Al Completed")
         sut.fetchCities { [weak self] (status, _) in
             guard let self = self else {
                 return
             }
             XCTAssertEqual(self.sut.numberOfCells, self.numberOfCities)
-            self.sut.filter("Amsterdam")
-            XCTAssertEqual(self.sut.numberOfCells, 4)
+            self.sut.filter("Al")
+            XCTAssertEqual(self.sut.numberOfCells, 2)
+            self.closureExpectation.fulfill()
+        }
+        wait(for: [closureExpectation], timeout: expectationTimeout)
+    }
+
+    func testFilteringForAlb() {
+        closureExpectation = expectation(description: "Search for Alb Completed")
+        sut.fetchCities { [weak self] (status, _) in
+            guard let self = self else {
+                return
+            }
+            XCTAssertEqual(self.sut.numberOfCells, self.numberOfCities)
+            self.sut.filter("Alb")
+            XCTAssertEqual(self.sut.numberOfCells, 1)
             self.closureExpectation.fulfill()
         }
         wait(for: [closureExpectation], timeout: expectationTimeout)

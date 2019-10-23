@@ -13,8 +13,19 @@ extension DataProvider {
     struct Constants {
         // MARK: API Key
         struct API {
-            static let cities = Bundle.main.url(forResource: "cities", withExtension: "json")
-            static let citiesShort = Bundle.main.url(forResource: "cities(short)", withExtension: "json")
+            static var citiesFileName: String {
+                #if DEBUG
+                return "cities-Debug"
+                #elseif TEST
+                return "cities-Test"
+                #elseif RELEASE
+                return "cities-Release"
+                #else
+                return "config flag not found"
+                #endif
+            }
+
+            static let cities = Bundle.main.url(forResource: citiesFileName, withExtension: "json")
             static let aboutInfo = Bundle.main.url(forResource: "aboutInfo", withExtension: "json")
         }
     }
