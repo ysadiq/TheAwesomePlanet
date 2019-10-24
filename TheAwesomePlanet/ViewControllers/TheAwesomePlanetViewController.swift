@@ -162,18 +162,22 @@ final class TheAwesomePlanetViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        if UIDevice.current.orientation.isLandscape {
+
+        switch UIDevice.current.orientation {
+        case .landscapeLeft, .landscapeRight:
             navigationController?.isToolbarHidden = true
             self.view.layoutIfNeeded()
 
             UIView.animate(withDuration: 0.1) { [weak self] in
                 self?.portraitView.alpha = 0
+                self?.landscapeView.searchBar.text = self?.portraitView.searchBar.text
                 self?.landscapeView.alpha = 1
                 self?.tableView.reloadData()
             }
-        } else {
+        default:
             UIView.animate(withDuration: 0.1) { [weak self] in
                 self?.landscapeView.alpha = 0
+                self?.portraitView.searchBar.text = self?.landscapeView.searchBar.text
                 self?.portraitView.alpha = 1
                 self?.tableView.reloadData()
             }
