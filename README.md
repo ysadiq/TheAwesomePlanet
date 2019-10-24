@@ -17,8 +17,7 @@ Cities List             |  Map of Mogadishu, Somalia
 :-------------------------:|:-------------------------:
 <img src="readme_images/list.png" alt="alt text">  |  <img src="readme_images/map.png" alt="alt text">
 
-landscape             |
-:-------------------------:|
+
 <img src="readme_images/landscape.png" alt="alt text">
 
 ### Features
