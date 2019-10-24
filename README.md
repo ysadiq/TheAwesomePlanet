@@ -1,7 +1,7 @@
 # The Awesome Planet
 
-[![CI Status](https://img.shields.io/travis/ysadiq/YSLoaderSample.svg?style=flat)](https://travis-ci.org/ysadiq/YSLoaderSample)
-[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/ysadiq/YSLoaderSample.svg)](https://codecov.io/github/ysadiq/YSLoaderSample?branch=master)
+[![CI Status](https://img.shields.io/travis/ysadiq/TheAwesomePlanet.svg?style=flat)](https://travis-ci.com/ysadiq/TheAwesomePlanet)
+[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/ysadiq/TheAwesomePlanet.svg)](https://codecov.io/github/ysadiq/YSLoaderSample?branch=master)
 
 This is an iOS app which shows a list of cities, containing around 200K entries in JSON format. Each entry contain the following information.
 
@@ -43,7 +43,7 @@ all cities but Sydney should appear. Contrariwise, if the given prefix is "s", t
 If the given prefix is "Al", "Alabama, US" and "Albuquerque, US" are the only results.      
 If the prefix given is "Alb" then the only result is "Albuquerque, US"
 
-### How Search Works
+### How Search Implemented
 The app uses higher order functions `filter` to loop over the list of cities and return an Array containing only those cities that match an include condition.
 
 <img src="readme_images/filter.png" alt="alt text">
