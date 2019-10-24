@@ -59,13 +59,6 @@ final class TheAwesomePlanetViewController: UIViewController {
         initViewModel()
     }
 
-    private func initActivityIndicatorView() {
-        activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
-        activityIndicatorView.color = .black
-        activityIndicatorView.center = self.view.center
-        view.addSubview(activityIndicatorView)
-    }
-
     private func initPortriatView() {
         guard let pView = UINib(nibName: "Portrait", bundle: .main).instantiate(withOwner: nil, options: nil).first as? PortraitView else {
             return
@@ -150,6 +143,13 @@ final class TheAwesomePlanetViewController: UIViewController {
         viewModel.fetchCities()
     }
 
+    private func initActivityIndicatorView() {
+        activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicatorView.color = .black
+        activityIndicatorView.center = self.view.center
+        view.addSubview(activityIndicatorView)
+    }
+
     func showAlert( _ message: String ) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
@@ -229,7 +229,7 @@ extension TheAwesomePlanetViewController: UITableViewDataSource {
     }
 }
 
-// MARK: TableView Datasource
+// MARK: TableView Delegate
 
 extension TheAwesomePlanetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
