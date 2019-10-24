@@ -1,7 +1,7 @@
 # The Awesome Planet
 
-[![CI Status](https://img.shields.io/travis/ysadiq/TheAwesomePlanet.svg?style=flat)](https://travis-ci.com/ysadiq/TheAwesomePlanet)
-[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/ysadiq/TheAwesomePlanet.svg)](https://codecov.io/github/ysadiq/YSLoaderSample?branch=master)
+[![Build Status](https://travis-ci.com/ysadiq/TheAwesomePlanet.svg?token=LYxV9XMqKuU2QuFkcpYs&branch=master)](https://travis-ci.com/ysadiq/TheAwesomePlanet)
+[![codecov](https://codecov.io/gh/ysadiq/TheAwesomePlanet/branch/master/graph/badge.svg?token=ekJSnsUA3s)](https://codecov.io/gh/ysadiq/TheAwesomePlanet)
 
 This is an iOS app which shows a list of cities, containing around 200K entries in JSON format. Each entry contain the following information.
 
