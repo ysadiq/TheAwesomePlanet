@@ -3,8 +3,7 @@ language: swift
 osx_image: xcode10.3
 
 script:
-  - xcodebuild -scheme TheAwesomePlanet -workspace TheAwesomePlanet.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.4' build test
-  #- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace TheAwesomePlanet.xcworkspace -scheme TheAwesomePlanet -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
+  - xcodebuild -scheme TheAwesomePlanet -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.4' build test
   #- sonar-scanner
 after_success:
   - bash <(curl -s https://codecov.io/bash)
