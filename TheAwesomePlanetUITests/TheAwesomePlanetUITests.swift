@@ -7,28 +7,89 @@
 //
 
 import XCTest
+@testable import TheAwesomePlanet
 
 class TheAwesomePlanetUITests: XCTestCase {
+    var app: XCUIApplication!
+    var closureExpectation: XCTestExpectation!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        super.setUp()
+        // Since UI tests are more expensive to run, it's usually a good idea
+        // to exit if a failure was encountered
         continueAfterFailure = false
+        app = XCUIApplication()
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        // We send a command line argument to our app,
+        // to enable it to reset its state
+        app.launchArguments.append("--uitesting")
+        app.launch()
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        XCTAssertTrue(app.isPortraitView)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        app = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAlabamaCell() {
+        let alabamaCell = XCUIApplication()
+            .tables
+            .cells
+            .staticTexts["Alabama, US"]
+
+        XCTAssertTrue(alabamaCell.exists)
     }
 
+    func testNavigatingToMapView() {
+        XCUIApplication()
+            .tables
+            .cells
+            .element(boundBy: 0)
+            .tap()
+
+        XCTAssertTrue(app.isMapView)
+    }
+
+    func testNavigatingToAboutView() {
+        XCUIApplication()
+            .tables
+            .cells
+            .element(boundBy: 0)
+            .buttons["AboutInfoButton"]
+            .tap()
+
+        XCTAssertTrue(app.isAboutInfoView)
+    }
+
+    func testAboutViewContent() {
+        XCUIApplication()
+            .tables
+            .cells
+            .element(boundBy: 0)
+            .buttons["AboutInfoButton"]
+            .tap()
+        
+        XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["Backbase"].exists)
+        XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["Jacob Bontiusplaats 9"].exists)
+        XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["1018 LL"].exists)
+        XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["Amsterdam"].exists)
+        XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["This is the Backbase iOS assignment"].exists)
+    }
+
+}
+
+extension XCUIApplication {
+    var isPortraitView: Bool {
+        return otherElements["PortraitView"].exists
+    }
+
+    var isMapView: Bool {
+        return otherElements["MapView"].exists
+    }
+
+    var isAboutInfoView: Bool {
+        return otherElements["AboutInfoView"].exists
+    }
 }

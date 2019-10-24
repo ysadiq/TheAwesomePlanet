@@ -8,12 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		99B184A3235A080E0005E952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184A2235A080E0005E952 /* AppDelegate.swift */; };
-		99B184A5235A080E0005E952 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184A4235A080E0005E952 /* ViewController.swift */; };
+		99B184A5235A080E0005E952 /* TheAwesomePlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */; };
 		99B184A8235A080E0005E952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B184A6235A080E0005E952 /* Main.storyboard */; };
 		99B184AA235A08100005E952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B184A9235A08100005E952 /* Assets.xcassets */; };
 		99B184AD235A08100005E952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B184AB235A08100005E952 /* LaunchScreen.storyboard */; };
-		99B184B8235A08100005E952 /* TheAwesomePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184B7235A08100005E952 /* TheAwesomePlanetTests.swift */; };
 		99B184C3235A08100005E952 /* TheAwesomePlanetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184C2235A08100005E952 /* TheAwesomePlanetUITests.swift */; };
+		99B184D1235A15650005E952 /* TheAwesomePlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184D0235A15650005E952 /* TheAwesomePlanetViewModel.swift */; };
+		99B184D3235A15DE0005E952 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184D2235A15DE0005E952 /* DataProvider.swift */; };
+		99B184D8235A18CF0005E952 /* DataProviderConvinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184D7235A18CF0005E952 /* DataProviderConvinience.swift */; };
+		99B184DA235A19320005E952 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184D9235A19320005E952 /* City.swift */; };
+		99B184DD235A1B390005E952 /* CLLocation+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184DC235A1B390005E952 /* CLLocation+Codable.swift */; };
+		99B184DF235A1BEA0005E952 /* DataProviderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */; };
+		99B184E3235A5E6F0005E952 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E2235A5E6F0005E952 /* GCD.swift */; };
+		99B184E5235A5FDD0005E952 /* CityCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */; };
+		99B184E7235A60B20005E952 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E6235A60B20005E952 /* Coordinate.swift */; };
+		99B184E9235A63EC0005E952 /* TheAwesomePlanetCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */; };
+		99B184EB235A725F0005E952 /* cities-Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184EA235A725F0005E952 /* cities-Test.json */; };
+		99B184EF235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */; };
+		99B184F1235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184F0235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift */; };
+		99B184F3235AE98C0005E952 /* AboutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184F2235AE98C0005E952 /* AboutInfo.swift */; };
+		99B184F8235AECDA0005E952 /* aboutInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184F7235AECD90005E952 /* aboutInfo.json */; };
+		99B184FA235AF1E40005E952 /* AboutInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184F9235AF1E40005E952 /* AboutInfoCellViewModel.swift */; };
+		99B184FC235AF7270005E952 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184FB235AF7270005E952 /* CityViewModel.swift */; };
+		99B18500235B14C80005E952 /* AboutInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */; };
+		99B18506235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */; };
+		99B18508235B54F50005E952 /* TheAwesomePlanetCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */; };
+		99D28AFE236144A600D06619 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28AFD236144A600D06619 /* State.swift */; };
+		99DBAF6E235D6F750056A898 /* Portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAF6D235D6F750056A898 /* Portrait.xib */; };
+		99DBAF70235D6F7F0056A898 /* Landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAF6F235D6F7F0056A898 /* Landscape.xib */; };
+		99DBAF75235D7D570056A898 /* PotraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF74235D7D570056A898 /* PotraitView.swift */; };
+		99DBAF77235D8FEF0056A898 /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF76235D8FEF0056A898 /* LandscapeView.swift */; };
+		99DBAF81235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF80235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift */; };
+		99DBAF84235E47C00056A898 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF83235E47C00056A898 /* MockDataProvider.swift */; };
+		99DBAF97235F5C070056A898 /* CityViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF96235F5C070056A898 /* CityViewModelTests.swift */; };
+		99DBAF99235F5CB10056A898 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF98235F5CB10056A898 /* DataProviderTests.swift */; };
+		99DBAF9B235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */; };
+		99DBAF9D235F6F5D0056A898 /* AboutInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */; };
+		99DBAFA123601AE30056A898 /* cities-Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B184EA235A725F0005E952 /* cities-Test.json */; };
+		99DBAFA32360734D0056A898 /* cities-Debug.json in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAFA22360734D0056A898 /* cities-Debug.json */; };
+		99DBAFA52360735D0056A898 /* cities-Release.json in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAFA42360735D0056A898 /* cities-Release.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +69,49 @@
 /* Begin PBXFileReference section */
 		99B1849F235A080E0005E952 /* TheAwesomePlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheAwesomePlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B184A2235A080E0005E952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99B184A4235A080E0005E952 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetViewController.swift; sourceTree = "<group>"; };
 		99B184A7235A080E0005E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99B184A9235A08100005E952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B184AC235A08100005E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B184AE235A08100005E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B184B3235A08100005E952 /* TheAwesomePlanetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheAwesomePlanetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99B184B7235A08100005E952 /* TheAwesomePlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetTests.swift; sourceTree = "<group>"; };
 		99B184B9235A08100005E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B184BE235A08100005E952 /* TheAwesomePlanetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheAwesomePlanetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B184C2235A08100005E952 /* TheAwesomePlanetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetUITests.swift; sourceTree = "<group>"; };
 		99B184C4235A08100005E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B184D0235A15650005E952 /* TheAwesomePlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetViewModel.swift; sourceTree = "<group>"; };
+		99B184D2235A15DE0005E952 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		99B184D7235A18CF0005E952 /* DataProviderConvinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderConvinience.swift; sourceTree = "<group>"; };
+		99B184D9235A19320005E952 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		99B184DC235A1B390005E952 /* CLLocation+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Codable.swift"; sourceTree = "<group>"; };
+		99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderConstants.swift; sourceTree = "<group>"; };
+		99B184E2235A5E6F0005E952 /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellViewModel.swift; sourceTree = "<group>"; };
+		99B184E6235A60B20005E952 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetCityCell.swift; sourceTree = "<group>"; };
+		99B184EA235A725F0005E952 /* cities-Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cities-Test.json"; sourceTree = "<group>"; };
+		99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetMapViewController.swift; sourceTree = "<group>"; };
+		99B184F0235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutViewController.swift; sourceTree = "<group>"; };
+		99B184F2235AE98C0005E952 /* AboutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfo.swift; sourceTree = "<group>"; };
+		99B184F7235AECD90005E952 /* aboutInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aboutInfo.json; sourceTree = "<group>"; };
+		99B184F9235AF1E40005E952 /* AboutInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoCellViewModel.swift; sourceTree = "<group>"; };
+		99B184FB235AF7270005E952 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoViewModel.swift; sourceTree = "<group>"; };
+		99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutInfoCell.swift; sourceTree = "<group>"; };
+		99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TheAwesomePlanetCityCell.xib; sourceTree = "<group>"; };
+		99D28AFD236144A600D06619 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		99DBAF6D235D6F750056A898 /* Portrait.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Portrait.xib; sourceTree = "<group>"; };
+		99DBAF6F235D6F7F0056A898 /* Landscape.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Landscape.xib; sourceTree = "<group>"; };
+		99DBAF74235D7D570056A898 /* PotraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotraitView.swift; sourceTree = "<group>"; };
+		99DBAF76235D8FEF0056A898 /* LandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
+		99DBAF80235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetViewControllerTests.swift; sourceTree = "<group>"; };
+		99DBAF83235E47C00056A898 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		99DBAF96235F5C070056A898 /* CityViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelTests.swift; sourceTree = "<group>"; };
+		99DBAF98235F5CB10056A898 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
+		99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutViewControllerTests.swift; sourceTree = "<group>"; };
+		99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoViewModelTests.swift; sourceTree = "<group>"; };
+		99DBAFA22360734D0056A898 /* cities-Debug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cities-Debug.json"; sourceTree = "<group>"; };
+		99DBAFA42360735D0056A898 /* cities-Release.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cities-Release.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +163,15 @@
 			isa = PBXGroup;
 			children = (
 				99B184A2235A080E0005E952 /* AppDelegate.swift */,
-				99B184A4235A080E0005E952 /* ViewController.swift */,
-				99B184A6235A080E0005E952 /* Main.storyboard */,
-				99B184A9235A08100005E952 /* Assets.xcassets */,
-				99B184AB235A08100005E952 /* LaunchScreen.storyboard */,
-				99B184AE235A08100005E952 /* Info.plist */,
+				99B184E2235A5E6F0005E952 /* GCD.swift */,
+				99D28AFD236144A600D06619 /* State.swift */,
+				99B184EC235AD5880005E952 /* ViewControllers */,
+				99B184ED235AD5980005E952 /* Cells */,
+				99B184D4235A17870005E952 /* Network */,
+				99B184D5235A179F0005E952 /* ViewModel */,
+				99B184DB235A19360005E952 /* Models */,
+				99DBAF71235D7D1B0056A898 /* Views */,
+				99B184D6235A17D50005E952 /* Resources */,
 			);
 			path = TheAwesomePlanet;
 			sourceTree = "<group>";
@@ -110,7 +179,12 @@
 		99B184B6235A08100005E952 /* TheAwesomePlanetTests */ = {
 			isa = PBXGroup;
 			children = (
-				99B184B7235A08100005E952 /* TheAwesomePlanetTests.swift */,
+				99DBAF82235E46C50056A898 /* Mocks */,
+				99DBAF80235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift */,
+				99DBAF9A235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift */,
+				99DBAF96235F5C070056A898 /* CityViewModelTests.swift */,
+				99DBAF9C235F6F5D0056A898 /* AboutInfoViewModelTests.swift */,
+				99DBAF98235F5CB10056A898 /* DataProviderTests.swift */,
 				99B184B9235A08100005E952 /* Info.plist */,
 			);
 			path = TheAwesomePlanetTests;
@@ -123,6 +197,141 @@
 				99B184C4235A08100005E952 /* Info.plist */,
 			);
 			path = TheAwesomePlanetUITests;
+			sourceTree = "<group>";
+		};
+		99B184D4235A17870005E952 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				99B184D2235A15DE0005E952 /* DataProvider.swift */,
+				99B184D7235A18CF0005E952 /* DataProviderConvinience.swift */,
+				99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		99B184D5235A179F0005E952 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				99B184D0235A15650005E952 /* TheAwesomePlanetViewModel.swift */,
+				99B184FD235B149D0005E952 /* City */,
+				99B184FE235B14A60005E952 /* AboutInfo */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		99B184D6235A17D50005E952 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99B184AE235A08100005E952 /* Info.plist */,
+				99B184A9235A08100005E952 /* Assets.xcassets */,
+				99DBAFA22360734D0056A898 /* cities-Debug.json */,
+				99B184EA235A725F0005E952 /* cities-Test.json */,
+				99DBAFA42360735D0056A898 /* cities-Release.json */,
+				99B184F7235AECD90005E952 /* aboutInfo.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		99B184DB235A19360005E952 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99B184DC235A1B390005E952 /* CLLocation+Codable.swift */,
+				99B18503235B1A2F0005E952 /* City */,
+				99B18504235B1A390005E952 /* AboutInfo */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		99B184EC235AD5880005E952 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */,
+				99B184EE235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift */,
+				99B184F0235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		99B184ED235AD5980005E952 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */,
+				99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */,
+				99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		99B184FD235B149D0005E952 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				99B184FB235AF7270005E952 /* CityViewModel.swift */,
+				99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		99B184FE235B14A60005E952 /* AboutInfo */ = {
+			isa = PBXGroup;
+			children = (
+				99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */,
+				99B184F9235AF1E40005E952 /* AboutInfoCellViewModel.swift */,
+			);
+			path = AboutInfo;
+			sourceTree = "<group>";
+		};
+		99B18503235B1A2F0005E952 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				99B184D9235A19320005E952 /* City.swift */,
+				99B184E6235A60B20005E952 /* Coordinate.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		99B18504235B1A390005E952 /* AboutInfo */ = {
+			isa = PBXGroup;
+			children = (
+				99B184F2235AE98C0005E952 /* AboutInfo.swift */,
+			);
+			path = AboutInfo;
+			sourceTree = "<group>";
+		};
+		99DBAF71235D7D1B0056A898 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99B184A6235A080E0005E952 /* Main.storyboard */,
+				99B184AB235A08100005E952 /* LaunchScreen.storyboard */,
+				99DBAF72235D7D290056A898 /* Portrait */,
+				99DBAF73235D7D340056A898 /* Landsacpe */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99DBAF72235D7D290056A898 /* Portrait */ = {
+			isa = PBXGroup;
+			children = (
+				99DBAF6D235D6F750056A898 /* Portrait.xib */,
+				99DBAF74235D7D570056A898 /* PotraitView.swift */,
+			);
+			path = Portrait;
+			sourceTree = "<group>";
+		};
+		99DBAF73235D7D340056A898 /* Landsacpe */ = {
+			isa = PBXGroup;
+			children = (
+				99DBAF6F235D6F7F0056A898 /* Landscape.xib */,
+				99DBAF76235D8FEF0056A898 /* LandscapeView.swift */,
+			);
+			path = Landsacpe;
+			sourceTree = "<group>";
+		};
+		99DBAF82235E46C50056A898 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				99DBAF83235E47C00056A898 /* MockDataProvider.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +438,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DBAFA32360734D0056A898 /* cities-Debug.json in Resources */,
+				99DBAF70235D6F7F0056A898 /* Landscape.xib in Resources */,
 				99B184AD235A08100005E952 /* LaunchScreen.storyboard in Resources */,
+				99DBAF6E235D6F750056A898 /* Portrait.xib in Resources */,
+				99B184EB235A725F0005E952 /* cities-Test.json in Resources */,
 				99B184AA235A08100005E952 /* Assets.xcassets in Resources */,
 				99B184A8235A080E0005E952 /* Main.storyboard in Resources */,
+				99B18508235B54F50005E952 /* TheAwesomePlanetCityCell.xib in Resources */,
+				99DBAFA52360735D0056A898 /* cities-Release.json in Resources */,
+				99B184F8235AECDA0005E952 /* aboutInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DBAFA123601AE30056A898 /* cities-Test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +473,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B184A5235A080E0005E952 /* ViewController.swift in Sources */,
+				99B184FC235AF7270005E952 /* CityViewModel.swift in Sources */,
+				99B184DF235A1BEA0005E952 /* DataProviderConstants.swift in Sources */,
+				99B184A5235A080E0005E952 /* TheAwesomePlanetViewController.swift in Sources */,
+				99D28AFE236144A600D06619 /* State.swift in Sources */,
+				99B184F1235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift in Sources */,
 				99B184A3235A080E0005E952 /* AppDelegate.swift in Sources */,
+				99B184E9235A63EC0005E952 /* TheAwesomePlanetCityCell.swift in Sources */,
+				99B184DA235A19320005E952 /* City.swift in Sources */,
+				99DBAF75235D7D570056A898 /* PotraitView.swift in Sources */,
+				99B184DD235A1B390005E952 /* CLLocation+Codable.swift in Sources */,
+				99B18500235B14C80005E952 /* AboutInfoViewModel.swift in Sources */,
+				99B184EF235AD5D80005E952 /* TheAwesomePlanetMapViewController.swift in Sources */,
+				99B184E7235A60B20005E952 /* Coordinate.swift in Sources */,
+				99B184D8235A18CF0005E952 /* DataProviderConvinience.swift in Sources */,
+				99B184FA235AF1E40005E952 /* AboutInfoCellViewModel.swift in Sources */,
+				99B18506235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift in Sources */,
+				99B184F3235AE98C0005E952 /* AboutInfo.swift in Sources */,
+				99B184E3235A5E6F0005E952 /* GCD.swift in Sources */,
+				99DBAF77235D8FEF0056A898 /* LandscapeView.swift in Sources */,
+				99B184D3235A15DE0005E952 /* DataProvider.swift in Sources */,
+				99B184D1235A15650005E952 /* TheAwesomePlanetViewModel.swift in Sources */,
+				99B184E5235A5FDD0005E952 /* CityCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +502,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B184B8235A08100005E952 /* TheAwesomePlanetTests.swift in Sources */,
+				99DBAF9D235F6F5D0056A898 /* AboutInfoViewModelTests.swift in Sources */,
+				99DBAF81235E458B0056A898 /* TheAwesomePlanetViewControllerTests.swift in Sources */,
+				99DBAF9B235F6D960056A898 /* TheAwesomePlanetAboutViewControllerTests.swift in Sources */,
+				99DBAF84235E47C00056A898 /* MockDataProvider.swift in Sources */,
+				99DBAF99235F5CB10056A898 /* DataProviderTests.swift in Sources */,
+				99DBAF97235F5C070056A898 /* CityViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +664,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -434,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = TheAwesomePlanet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TheAwesomePlanet/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = TheAwesomePlanet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TheAwesomePlanet/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,6 +789,126 @@
 			};
 			name = Release;
 		};
+		99DBAFA6236074D70056A898 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Test;
+		};
+		99DBAFA7236074D70056A898 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93L23JH8CL;
+				INFOPLIST_FILE = "$(SRCROOT)/TheAwesomePlanet/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysaddiq.TheAwesomePlanet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Test;
+		};
+		99DBAFA8236074D70056A898 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93L23JH8CL;
+				INFOPLIST_FILE = TheAwesomePlanetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysaddiq.TheAwesomePlanetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheAwesomePlanet.app/TheAwesomePlanet";
+			};
+			name = Test;
+		};
+		99DBAFA9236074D70056A898 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93L23JH8CL;
+				INFOPLIST_FILE = TheAwesomePlanetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysaddiq.TheAwesomePlanetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheAwesomePlanet;
+			};
+			name = Test;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +916,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99B184C5235A08100005E952 /* Debug */,
+				99DBAFA6236074D70056A898 /* Test */,
 				99B184C6235A08100005E952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -562,6 +926,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99B184C8235A08100005E952 /* Debug */,
+				99DBAFA7236074D70056A898 /* Test */,
 				99B184C9235A08100005E952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -571,6 +936,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99B184CB235A08100005E952 /* Debug */,
+				99DBAFA8236074D70056A898 /* Test */,
 				99B184CC235A08100005E952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -580,6 +946,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99B184CE235A08100005E952 /* Debug */,
+				99DBAFA9236074D70056A898 /* Test */,
 				99B184CF235A08100005E952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
