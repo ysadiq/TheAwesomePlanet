@@ -16,18 +16,20 @@ class TheAwesomePlanetViewModel {
     let dataManager: DataProviderProtocol
     var cellViewModels: [CellViewModelProtocol] = [CellViewModelProtocol]() {
         didSet {
+            state = .populated
             self.reloadTableViewClosure?()
         }
     }
 
     var filteredCellViewModels: [CellViewModelProtocol] = [CellViewModelProtocol]() {
         didSet {
+            state = .populatedWithFilter
             self.reloadTableViewClosure?()
         }
     }
 
     // callback for interfaces
-    var isLoading: Bool = false {
+    var state: State = .empty {
         didSet {
             self.updateLoadingStatus?()
         }
@@ -40,9 +42,8 @@ class TheAwesomePlanetViewModel {
     }
 
     var numberOfCells: Int {
-        return isFiltering ? filteredCellViewModels.count : cellViewModels.count
+        return state == .populatedWithFilter ? filteredCellViewModels.count : cellViewModels.count
     }
-    var isFiltering: Bool = false
 
     // interfaces
     var reloadTableViewClosure: (()->())?
@@ -57,17 +58,18 @@ class TheAwesomePlanetViewModel {
         guard indexPath.row < numberOfCells else {
             return nil
         }
-        return isFiltering ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
+        return state == .populatedWithFilter ? filteredCellViewModels[indexPath.row] : cellViewModels[indexPath.row]
     }
 
     @discardableResult
     func filter(_ searchText: String,_ cityCell: CellViewModelProtocol? = nil) -> Bool {
+        state = .searching
         guard searchText != "" else {
-            isFiltering = false
+            state = .populated
             reloadTableViewClosure?()
             return false
         }
-        isFiltering = true
+
         filteredCellViewModels = cellViewModels.filter {
             return filter(searchText, $0)
         }

@@ -10,7 +10,7 @@ import Foundation
 
 class AboutInfoViewModel: TheAwesomePlanetViewModel {
     func fetchAboutInfo(_ completionForFetchAboutInfo: ((_ status: Bool, _ error: Error?) -> Void)? = nil) {
-        isLoading = true
+        state = .loading
         dataManager.getAboutInfo {[weak self] (aboutInfo, error) in
             guard let self = self else {
                 return
@@ -18,13 +18,13 @@ class AboutInfoViewModel: TheAwesomePlanetViewModel {
             guard error == nil,
                 let aboutInfo = aboutInfo else {
                     self.alertMessage = error?.localizedDescription
+                    self.state = .error
                     if let completionForFetchAboutInfo = completionForFetchAboutInfo {
                         completionForFetchAboutInfo(false, error)
                     }
                     return
             }
             self.processFetchedAboutInfo(aboutInfo)
-            self.isLoading = false
             if let completionForFetchAboutInfo = completionForFetchAboutInfo {
                 completionForFetchAboutInfo(true, nil)
             }

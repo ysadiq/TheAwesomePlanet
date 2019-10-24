@@ -13,7 +13,7 @@ import UIKit
 final class TheAwesomePlanetAboutViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var tableView: UITableView!
-    let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     lazy var viewModel: AboutInfoViewModel = {
         return AboutInfoViewModel()
     }()
@@ -21,8 +21,8 @@ final class TheAwesomePlanetAboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.titleView = activityIndicator
-        activityIndicator.hidesWhenStopped = true
+        navigationItem.titleView = activityIndicatorView
+        activityIndicatorView.hidesWhenStopped = true
         initViewModel()
     }
 
@@ -31,24 +31,35 @@ final class TheAwesomePlanetAboutViewController: UIViewController {
             performUIUpdatesOnMain { [weak self] in
                 if let message = self?.viewModel.alertMessage {
                     self?.showAlert(message)
-                    self?.activityIndicator.stopAnimating()
+                    self?.activityIndicatorView.stopAnimating()
                 }
             }
         }
 
         viewModel.updateLoadingStatus = { [weak self] () in
+            guard let self = self else {
+                return
+            }
+
             DispatchQueue.main.async {
-                let isLoading = self?.viewModel.isLoading ?? false
-                if isLoading {
-                    self?.activityIndicator.startAnimating()
+                switch self.viewModel.state {
+                case .empty, .error:
+                    self.activityIndicatorView.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?.tableView.alpha = 0.0
+                        self.tableView.alpha = 0.0
                     })
-                }else {
-                    self?.activityIndicator.stopAnimating()
+                case .loading:
+                    self.activityIndicatorView.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?.tableView.alpha = 1.0
+                        self.tableView.alpha = 0.0
                     })
+                case .populated:
+                    self.activityIndicatorView.stopAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.tableView.alpha = 1.0
+                    })
+                default:
+                    break
                 }
             }
         }

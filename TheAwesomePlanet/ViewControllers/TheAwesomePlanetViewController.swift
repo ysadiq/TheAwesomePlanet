@@ -111,17 +111,31 @@ final class TheAwesomePlanetViewController: UIViewController {
         }
 
         viewModel.updateLoadingStatus = { [weak self] () in
+            guard let self = self else {
+                return
+            }
+
             DispatchQueue.main.async {
-                let isLoading = self?.viewModel.isLoading ?? false
-                if isLoading {
-                    self?.activityIndicatorView.startAnimating()
+                switch self.viewModel.state {
+                case .empty, .error:
+                    self.activityIndicatorView.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?._view.alpha = 0.0
+                        self._view.alpha = 0.0
                     })
-                }else {
-                    self?.activityIndicatorView.stopAnimating()
+                case .loading:
+                    self.activityIndicatorView.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
-                        self?._view.alpha = 1.0
+                        self._view.alpha = 0.0
+                    })
+                case .populated, .populatedWithFilter:
+                    self.activityIndicatorView.stopAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self._view.alpha = 1.0
+                    })
+                case .searching:
+                    self.activityIndicatorView.startAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self._view.alpha = 0.1
                     })
                 }
             }

@@ -10,7 +10,7 @@ import Foundation
 
 class CityViewModel: TheAwesomePlanetViewModel {
     func fetchCities(_ completionForFetchCities: ((_ status: Bool, _ error: Error?) -> Void)? = nil) {
-        isLoading = true
+        state = .loading
         dataManager.getCities {[weak self] (cities, error) in
             guard let self = self else {
                 return
@@ -18,13 +18,13 @@ class CityViewModel: TheAwesomePlanetViewModel {
             guard error == nil,
                 let cities = cities else {
                     self.alertMessage = error?.localizedDescription
+                    self.state = .error
                     if let completionForFetchCities = completionForFetchCities {
                         completionForFetchCities(false, error)
                     }
                     return
             }
             self.processFetchedCities(self.sort(cities))
-            self.isLoading = false
             if let completionForFetchCities = completionForFetchCities {
                 completionForFetchCities(true, nil)
             }

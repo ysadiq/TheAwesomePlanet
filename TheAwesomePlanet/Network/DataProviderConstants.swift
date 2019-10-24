@@ -25,8 +25,12 @@ extension DataProvider {
                 #endif
             }
 
+            static var aboutInfoFileName: String {
+                return "aboutInfo"
+            }
+
             static let cities = Bundle.main.url(forResource: citiesFileName, withExtension: "json")
-            static let aboutInfo = Bundle.main.url(forResource: "aboutInfo", withExtension: "json")
+            static let aboutInfo = Bundle.main.url(forResource: aboutInfoFileName, withExtension: "json")
         }
     }
 }

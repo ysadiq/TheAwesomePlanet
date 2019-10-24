@@ -11,6 +11,8 @@ extension DataProvider {
     // MARK: Cities (GET) Methods
     func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void) {
         guard let citiesAPI = Constants.API.cities else {
+            let userInfo = [NSLocalizedDescriptionKey : "bad request"]
+            completionHandlerForCities(nil, NSError(domain: "getCities", code: 1, userInfo: userInfo))
             return
         }
         
@@ -34,6 +36,8 @@ extension DataProvider {
     // MARK: AboutInfo (GET) Methods
     func getAboutInfo(completionHandlerForAboutInfo: @escaping (_ result: AboutInfo?, _ error : NSError?) -> Void) {
         guard let aboutInfoAPI = Constants.API.aboutInfo else {
+            let userInfo = [NSLocalizedDescriptionKey : "bad request"]
+            completionHandlerForAboutInfo(nil, NSError(domain: "getAboutInfo", code: 1, userInfo: userInfo))
             return
         }
 

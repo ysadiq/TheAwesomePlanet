@@ -33,6 +33,7 @@
 		99B18500235B14C80005E952 /* AboutInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */; };
 		99B18506235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */; };
 		99B18508235B54F50005E952 /* TheAwesomePlanetCityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */; };
+		99D28AFE236144A600D06619 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D28AFD236144A600D06619 /* State.swift */; };
 		99DBAF6E235D6F750056A898 /* Portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAF6D235D6F750056A898 /* Portrait.xib */; };
 		99DBAF70235D6F7F0056A898 /* Landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DBAF6F235D6F7F0056A898 /* Landscape.xib */; };
 		99DBAF75235D7D570056A898 /* PotraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DBAF74235D7D570056A898 /* PotraitView.swift */; };
@@ -98,6 +99,7 @@
 		99B184FF235B14C80005E952 /* AboutInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoViewModel.swift; sourceTree = "<group>"; };
 		99B18505235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetAboutInfoCell.swift; sourceTree = "<group>"; };
 		99B18507235B54F50005E952 /* TheAwesomePlanetCityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TheAwesomePlanetCityCell.xib; sourceTree = "<group>"; };
+		99D28AFD236144A600D06619 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		99DBAF6D235D6F750056A898 /* Portrait.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Portrait.xib; sourceTree = "<group>"; };
 		99DBAF6F235D6F7F0056A898 /* Landscape.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Landscape.xib; sourceTree = "<group>"; };
 		99DBAF74235D7D570056A898 /* PotraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotraitView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				99B184A2235A080E0005E952 /* AppDelegate.swift */,
 				99B184E2235A5E6F0005E952 /* GCD.swift */,
+				99D28AFD236144A600D06619 /* State.swift */,
 				99B184EC235AD5880005E952 /* ViewControllers */,
 				99B184ED235AD5980005E952 /* Cells */,
 				99B184D4235A17870005E952 /* Network */,
@@ -473,6 +476,7 @@
 				99B184FC235AF7270005E952 /* CityViewModel.swift in Sources */,
 				99B184DF235A1BEA0005E952 /* DataProviderConstants.swift in Sources */,
 				99B184A5235A080E0005E952 /* TheAwesomePlanetViewController.swift in Sources */,
+				99D28AFE236144A600D06619 /* State.swift in Sources */,
 				99B184F1235AE3CB0005E952 /* TheAwesomePlanetAboutViewController.swift in Sources */,
 				99B184A3235A080E0005E952 /* AppDelegate.swift in Sources */,
 				99B184E9235A63EC0005E952 /* TheAwesomePlanetCityCell.swift in Sources */,
