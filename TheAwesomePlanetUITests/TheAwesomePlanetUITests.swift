@@ -15,6 +15,8 @@ class TheAwesomePlanetUITests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        // Since UI tests are more expensive to run, it's usually a good idea
+        // to exit if a failure was encountered
         continueAfterFailure = false
         app = XCUIApplication()
 

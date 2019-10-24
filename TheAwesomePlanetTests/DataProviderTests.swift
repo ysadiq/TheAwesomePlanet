@@ -25,6 +25,7 @@ class DataProviderTests: XCTestCase {
     func testGetCities() {
         closureExpectation = expectation(description: "Get Cities Completed")
         sut.getCities { [weak self] (cities, _) in
+            XCTAssertEqual(cities?.count, 5)
             self?.closureExpectation.fulfill()
         }
         wait(for: [closureExpectation], timeout: expectationTimeout)
