@@ -13,7 +13,7 @@ class TheAwesomePlanetAboutInfoCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
 
     func configure(with aboutInfoCellViewModel: AboutInfoCellViewModel) {
-        performUIUpdatesOnMain { [weak self] in
+        DispatchQueue.main.async { [weak self] in
             self?.titleLabel.text = aboutInfoCellViewModel.field
         }
     }

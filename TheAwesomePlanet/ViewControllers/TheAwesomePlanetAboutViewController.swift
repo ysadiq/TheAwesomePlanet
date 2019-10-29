@@ -28,7 +28,7 @@ final class TheAwesomePlanetAboutViewController: UIViewController {
 
     func initViewModel() {
         viewModel.showAlertClosure = { [weak self] () in
-            performUIUpdatesOnMain { [weak self] in
+            DispatchQueue.main.async { [weak self] in
                 if let message = self?.viewModel.alertMessage {
                     self?.showAlert(message)
                     self?.activityIndicatorView.stopAnimating()
@@ -65,7 +65,7 @@ final class TheAwesomePlanetAboutViewController: UIViewController {
         }
 
         viewModel.reloadTableViewClosure = { [weak self] () in
-            performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }

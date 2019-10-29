@@ -16,7 +16,7 @@ class TheAwesomePlanetCityCell: UITableViewCell {
     var delegate: TheAwesomePlanetCityCellDelegate?
 
     func configure(with cityCellViewModel: CityCellViewModel) {
-        performUIUpdatesOnMain { [weak self] in
+        DispatchQueue.main.async { [weak self] in
             self?.title.text = "\(cityCellViewModel.name), \(cityCellViewModel.country)"
             self?.subTitle.text = "\(cityCellViewModel.coordinate.lat), \(cityCellViewModel.coordinate.lon)"
             self?.showDetailsButton.setTitle("Discover \(cityCellViewModel.name)",for: .normal)

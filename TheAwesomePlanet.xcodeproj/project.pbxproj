@@ -19,7 +19,6 @@
 		99B184DA235A19320005E952 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184D9235A19320005E952 /* City.swift */; };
 		99B184DD235A1B390005E952 /* CLLocation+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184DC235A1B390005E952 /* CLLocation+Codable.swift */; };
 		99B184DF235A1BEA0005E952 /* DataProviderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */; };
-		99B184E3235A5E6F0005E952 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E2235A5E6F0005E952 /* GCD.swift */; };
 		99B184E5235A5FDD0005E952 /* CityCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */; };
 		99B184E7235A60B20005E952 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E6235A60B20005E952 /* Coordinate.swift */; };
 		99B184E9235A63EC0005E952 /* TheAwesomePlanetCityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */; };
@@ -85,7 +84,6 @@
 		99B184D9235A19320005E952 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		99B184DC235A1B390005E952 /* CLLocation+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Codable.swift"; sourceTree = "<group>"; };
 		99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderConstants.swift; sourceTree = "<group>"; };
-		99B184E2235A5E6F0005E952 /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		99B184E4235A5FDD0005E952 /* CityCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellViewModel.swift; sourceTree = "<group>"; };
 		99B184E6235A60B20005E952 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		99B184E8235A63EC0005E952 /* TheAwesomePlanetCityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetCityCell.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				99B184A2235A080E0005E952 /* AppDelegate.swift */,
-				99B184E2235A5E6F0005E952 /* GCD.swift */,
 				99D28AFD236144A600D06619 /* State.swift */,
 				99B184EC235AD5880005E952 /* ViewControllers */,
 				99B184ED235AD5980005E952 /* Cells */,
@@ -490,7 +487,6 @@
 				99B184FA235AF1E40005E952 /* AboutInfoCellViewModel.swift in Sources */,
 				99B18506235B1BE60005E952 /* TheAwesomePlanetAboutInfoCell.swift in Sources */,
 				99B184F3235AE98C0005E952 /* AboutInfo.swift in Sources */,
-				99B184E3235A5E6F0005E952 /* GCD.swift in Sources */,
 				99DBAF77235D8FEF0056A898 /* LandscapeView.swift in Sources */,
 				99B184D3235A15DE0005E952 /* DataProvider.swift in Sources */,
 				99B184D1235A15650005E952 /* TheAwesomePlanetViewModel.swift in Sources */,
