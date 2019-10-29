@@ -24,8 +24,6 @@ class TheAwesomePlanetUITests: XCTestCase {
         // to enable it to reset its state
         app.launchArguments.append("--uitesting")
         app.launch()
-
-        XCTAssertTrue(app.isPortraitView)
     }
 
     override func tearDown() {
@@ -43,6 +41,9 @@ class TheAwesomePlanetUITests: XCTestCase {
     }
 
     func testNavigatingToMapView() {
+        guard app.isPortraitView else {
+            return
+        }
         XCUIApplication()
             .tables
             .cells
