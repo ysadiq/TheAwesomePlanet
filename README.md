@@ -1,6 +1,6 @@
 # The Awesome Planet
 
-[![Build Status](https://travis-ci.com/ysadiq/TheAwesomePlanet.svg?token=LYxV9XMqKuU2QuFkcpYs&branch=master)](https://travis-ci.com/ysadiq/TheAwesomePlanet)
+[![Build Status](https://travis-ci.org/ysadiq/TheAwesomePlanet.svg?branch=master)](https://travis-ci.org/ysadiq/TheAwesomePlanet)
 [![codecov](https://codecov.io/gh/ysadiq/TheAwesomePlanet/branch/master/graph/badge.svg?token=ekJSnsUA3s)](https://codecov.io/gh/ysadiq/TheAwesomePlanet)
 
 This is an iOS app which shows a list of cities, containing around 200K entries in JSON format. Each entry contain the following information.
@@ -59,3 +59,12 @@ let even = digits.filter { $0 % 2 == 0 }
 ### Prerequisites
 
 Should use at least Xcode 10 and iOS 10.0.
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.c/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
