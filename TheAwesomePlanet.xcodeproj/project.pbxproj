@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		996B86572368B3D200285754 /* TAPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B86562368B3D200285754 /* TAPError.swift */; };
 		99B184A3235A080E0005E952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184A2235A080E0005E952 /* AppDelegate.swift */; };
 		99B184A5235A080E0005E952 /* TheAwesomePlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */; };
 		99B184A8235A080E0005E952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B184A6235A080E0005E952 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		996B86562368B3D200285754 /* TAPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPError.swift; sourceTree = "<group>"; };
 		99B1849F235A080E0005E952 /* TheAwesomePlanet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheAwesomePlanet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B184A2235A080E0005E952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99B184A4235A080E0005E952 /* TheAwesomePlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAwesomePlanetViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				99B184D2235A15DE0005E952 /* DataProvider.swift */,
 				99B184D7235A18CF0005E952 /* DataProviderConvinience.swift */,
 				99B184DE235A1BEA0005E952 /* DataProviderConstants.swift */,
+				996B86562368B3D200285754 /* TAPError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996B86572368B3D200285754 /* TAPError.swift in Sources */,
 				99B184FC235AF7270005E952 /* CityViewModel.swift in Sources */,
 				99B184DF235A1BEA0005E952 /* DataProviderConstants.swift in Sources */,
 				99B184A5235A080E0005E952 /* TheAwesomePlanetViewController.swift in Sources */,

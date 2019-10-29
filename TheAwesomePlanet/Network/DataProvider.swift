@@ -11,8 +11,8 @@ import Foundation
 protocol DataProviderProtocol {
     static func sharedInstance() -> DataProviderProtocol
     func taskForGETMethod(_ url: URL, parameters: [String:Any]?, completionHandlerForGET: @escaping (_ result: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask?
-    func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : NSError?) -> Void)
-    func getAboutInfo(completionHandlerForAboutInfo: @escaping (_ result: AboutInfo?, _ error : NSError?) -> Void)
+    func getCities(completionHandlerForCities: @escaping (_ result: [City]?, _ error : Error?) -> Void)
+    func getAboutInfo(completionHandlerForAboutInfo: @escaping (_ result: AboutInfo?, _ error : Error?) -> Void)
 }
 
 // MARK: - DataProvider: NSObject
