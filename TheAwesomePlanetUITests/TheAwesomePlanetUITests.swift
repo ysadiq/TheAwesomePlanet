@@ -53,7 +53,7 @@ class TheAwesomePlanetUITests: XCTestCase {
         XCTAssertTrue(app.isMapView)
     }
 
-    func testNavigatingToAboutView() {
+    /*func testNavigatingToAboutView() {
         XCUIApplication()
             .tables
             .cells
@@ -77,7 +77,7 @@ class TheAwesomePlanetUITests: XCTestCase {
         XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["1018 LL"].exists)
         XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["Amsterdam"].exists)
         XCTAssertTrue(XCUIApplication().tables.cells.staticTexts["This is the Backbase iOS assignment"].exists)
-    }
+    }*/
 
 }
 

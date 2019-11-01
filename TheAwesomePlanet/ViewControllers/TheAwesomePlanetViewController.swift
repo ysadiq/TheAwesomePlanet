@@ -108,7 +108,10 @@ final class TheAwesomePlanetViewController: UIViewController {
                 return
             }
 
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 switch self.viewModel.state {
                 case .empty, .error:
                     self.activityIndicatorView.stopAnimating()
@@ -203,7 +206,7 @@ extension TheAwesomePlanetViewController {
 
 extension TheAwesomePlanetViewController: TheAwesomePlanetCityCellDelegate {
     func showDetailsButtonPressed(_ cell: TheAwesomePlanetCityCell) {
-        performSegue(withIdentifier: "showDetails", sender: tableView)
+//        performSegue(withIdentifier: "showDetails", sender: tableView)
     }
 }
 

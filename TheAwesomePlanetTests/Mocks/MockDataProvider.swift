@@ -26,11 +26,11 @@ class MockDataProvider: DataProviderProtocol {
         return nil
     }
     
-    func getCities(completionHandlerForCities: @escaping ([City]?, NSError?) -> Void) {
+    func getCities(completionHandlerForCities: @escaping ([City]?, Error?) -> Void) {
         getCitiesIsCalled = true
     }
     
-    func getAboutInfo(completionHandlerForAboutInfo: @escaping (AboutInfo?, NSError?) -> Void) {
+    func getAboutInfo(completionHandlerForAboutInfo: @escaping (AboutInfo?, Error?) -> Void) {
         getAboutInfoIsCalled = true
     }
     
