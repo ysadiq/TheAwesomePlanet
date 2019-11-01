@@ -60,6 +60,10 @@ let even = digits.filter { $0 % 2 == 0 }
 
 Should use at least Xcode 10 and iOS 10.0.
 
+## Next Steps
+
+* Add DiscoverCity feature
+* Enhance search algorithm
 
 ## Contributing
 
